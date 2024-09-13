@@ -1,0 +1,37 @@
+version: "3"
+services:
+  nrids_hackathon_backend:
+    build:
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        - PROJECT_DIR=/var/www/backend
+    env_file: .env
+    command: sleep infinity
+    volumes:
+      - .:/var/www/backend:delegated
+      - backend_bash_history:/commandhistory
+      - backend_site_packages:/usr/local/lib/python3.12/site-packages
+      - vscode_extensions:/root/.vscode-server/extensions
+    ports:
+      - "8000:8000"
+    links:
+      - nrids_hackathon_database
+    depends_on:
+      - nrids_hackathon_database
+
+  nrids_hackathon_database:
+    image: postgres
+    environment:
+      - POSTGRES_DB=django
+      - POSTGRES_USER=django
+      - POSTGRES_PASSWORD=django
+    volumes:
+      - nrids_hackathon_database_files:/var/lib/postgresql/data
+    ports:
+      - 15432:5432
+
+volumes:
+  nrids_hackathon_database_files:
+  backend_bash_history:
+  backend_site_packages:
+  vscode_extensions:

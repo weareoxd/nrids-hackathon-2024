@@ -1,0 +1,86 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "poetry install",
+      "detail": "Install packages from Poetry lockfile",
+      "type": "shell",
+      "command": "poetry",
+      "args": ["install"],
+      "isBackground": false,
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared",
+        "group": "poetry"
+      }
+    },
+    {
+      "label": "poetry update",
+      "detail": "Update dependencies to latest versions",
+      "type": "shell",
+      "command": "poetry",
+      "args": ["update"],
+      "isBackground": false,
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "group": "poetry"
+      }
+    },
+    {
+      "label": "django migrate",
+      "detail": "Run Django migrations",
+      "type": "shell",
+      "command": "python",
+      "args": ["manage.py", "migrate"],
+      "isBackground": false,
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared",
+        "group": "management commands"
+      }
+    },
+    {
+      "label": "backend server",
+      "detail": "Run the Django server on port 8000",
+      "type": "shell",
+      "command": "python",
+      "args": ["manage.py", "runserver", "0.0.0.0:8000"],
+      "isBackground": false,
+      "dependsOrder": "sequence",
+      "dependsOn": ["poetry install", "django migrate"],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "group": "management commands"
+      }
+    },
+    {
+      "label": "backend shell",
+      "detail": "Run Django shell",
+      "type": "shell",
+      "command": "python",
+      "args": ["manage.py", "shell_plus"],
+      "isBackground": false,
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}

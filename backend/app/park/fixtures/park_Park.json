@@ -1,0 +1,248 @@
+[
+  {
+    "model": "park.park",
+    "pk": 467,
+    "fields": {
+      "name": "Cultus Lake Park",
+      "data": {
+        "url": "https://bcparks.ca/cultus-lake-park/",
+        "image": "https://nrs.objectstore.gov.bc.ca/kuwyyf/cultus_lake_park_41_gal_RS_10751_afa4922e39.jpg",
+        "status": "open",
+        "gallery": [
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_cultus_lake_park_41_gal_RS_10712_62d974466e.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_cultus_lake_park_41_gal_RS_10733_0620353091.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_cultus_lake_park_41_gal_RS_10749_fb4609f16e.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_cultus_lake_park_41_gal_RS_10753_dd426466d4.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_cultus_lake_park_41_gal_RS_10729_582e9b757f.jpg"
+        ],
+        "calendar": "The park is open year-round",
+        "features": {
+          "Hiking": "hiking.svg",
+          "Cycling": "cycling.svg",
+          "Swimming": "swimming.svg",
+          "Picnic areas": "picnic-area.svg",
+          "Pets on leash": "pets-on-leash.svg",
+          "Frontcountry camping": "frontcountry-camping.svg"
+        },
+        "latitude": "49.045897",
+        "location": "Lower Mainland",
+        "longitude": "-121.977774",
+        "description": [
+          "As one of the most popular destination areas in the Lower Mainland, Cultus Lake Park is characterized by a large, warm freshwater lake and scenic forest-clad mountains. The park is almost evenly divided between the northwest and southeast sides of Cultus Lake. The northwest portion is mostly undeveloped with the visitor-oriented facilities confined to the southeast portion.",
+          "Just an hour and a half drive away from Vancouver, Cultus Lake Park has four campgrounds, a large day-use area for picnicking and boating, and ample opportunity for fishing, water skiing, wind surfing, and hiking.",
+          "The park is near the small community of Cultus Lake. This community offers waterslides, two golf courses, bumper boats, go-karts, as well as canoe, boat, and jet ski rentals. There is also a marina, miniature golf, restaurants, stables, laundromat, stores, and gas stations. Larger department stores are located in Chilliwack."
+        ]
+      }
+    }
+  },
+  {
+    "model": "park.park",
+    "pk": 509,
+    "fields": {
+      "name": "Golden Ears Park",
+      "data": {
+        "url": "https://bcparks.ca/golden-ears-park/",
+        "image": "https://nrs.objectstore.gov.bc.ca/kuwyyf/RS_2729_DSC_0257_gal_c383d32d24.JPG",
+        "status": "open",
+        "gallery": [
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_7390_Golden_Ears_gal_e622f8f345.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_2776_DSC_0547_gal_7d28815b94.JPG",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_2744_DSC_0352_gal_6cdc7c6877.JPG",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_2756_DSC_0531_gal_7486092387.JPG",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_2583_0008_00_HQRC_0003_gal_3623f40a85.jpg"
+        ],
+        "calendar": "The park is open year-round",
+        "features": {
+          "Hiking": "hiking.svg",
+          "Cycling": "cycling.svg",
+          "Swimming": "swimming.svg",
+          "Picnic areas": "picnic-area.svg",
+          "Pets on leash": "pets-on-leash.svg",
+          "Backcoutry camping": "backcountry-camping.svg",
+          "Frontcountry camping": "frontcountry-camping.svg"
+        },
+        "latitude": "49.499726",
+        "location": "Lower Mainland",
+        "longitude": "-122.450121",
+        "description": [
+          "One of British Columbia\u2019s largest parks, Golden Ears is an exceptional destination for all sorts of recreation. The park features three large campgrounds and an extensive system of hiking and horseback-riding trails. Alouette Lake, meanwhile, is a popular spot for swimming, windsurfing, water-skiing, canoeing, boating, and fishing.",
+          "The landscape of Golden Ears Park offers an excellent example of B.C.\u2019s coastal western hemlock forest. The park\u2019s extensive backcountry is mountainous and extremely rugged."
+        ]
+      }
+    }
+  },
+  {
+    "model": "park.park",
+    "pk": 514,
+    "fields": {
+      "name": "Goldstream Park",
+      "data": {
+        "url": "https://bcparks.ca/goldstream-park/",
+        "image": "https://nrs.objectstore.gov.bc.ca/kuwyyf/goldstream_RS_1087_a24788938a.jpg",
+        "status": "open",
+        "gallery": [
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_goldstream_RS_1029_9816abc7c5.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_goldstream_RS_1201_53816c3590.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_goldstream_RS_1013_6aaf4c344f.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_goldstream_RS_1087_a24788938a.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_goldstream_RS_1200_ea1f3a6ebb.jpg"
+        ],
+        "calendar": "The park gate is open year-round",
+        "features": {
+          "Hiking": "hiking.svg",
+          "Cycling": "cycling.svg",
+          "Swimming": "swimming.svg",
+          "Picnic areas": "picnic-area.svg",
+          "Pets on leash": "pets-on-leash.svg",
+          "Frontcountry camping": "frontcountry-camping.svg"
+        },
+        "latitude": "48.471854",
+        "location": "South Island",
+        "longitude": "-123.555082",
+        "description": [
+          "Massive trees, majestic waterfalls, a meandering river that meets the sea, flowers, birds, and fascinating fish are but a few of the attractions that draw people to Goldstream Park, a mere 16km from downtown Victoria on southern Vancouver Island.",
+          "It\u2019s a world that seems far removed from the urban adventures of British Columbia\u2019s capital city, whether the visitor is a hiker seeking inspiration from this magnificent example of the great outdoors, or a naturalist looking to add to their notebook. There\u2019s something new, different, and exciting every month of the year at Goldstream Park.",
+          "Goldstream\u2019s numerous trails criss-cross through the dramatically different terrain of two distinct vegetation zones. The park is home to 600-year-old Douglas fir trees and western red cedar, mixed with western yew and hemlock, red alder, big leaf maple and black cottonwood. On the drier ridges visitors can find flowering dogwood, lodgepole pine and arbutus. The arbutus, with its thick leathery evergreen leaves, red-dish trunk and peeling bark, is Canada\u2019s only broad-leafed evergreen and is found exclusively on Vancouver Island and on the southwest coast of British Columbia. ",
+          "In the spring and early summer, Goldstream overflows with colourful wildflowers, including the shade-loving western trillium and the calypso, a delicate orchid of the mossy forest glades.",
+          "Trails range from easy, wheelchair-accessible walks to strenuous hikes and track along creeks, through forested uplands and past abandoned gold diggings from the days of the Gold Rush. More adventurous hikers can climb to the top of one of the highest points in Greater Victoria, which is Mount Finlayson, a recent addition to the park in 1994. Another trail leads you to stunning Niagara Falls, which cascades 47.5 metres down a rock cliff into a crystal clear canyon pool below.",
+          "The park is also the site of an annual chum salmon spawning run, which draws thousands of salmon, and thousands of visitors, every year. Riverside trails and observation platforms provide extraordinary opportunities to view this natural phenomenon, which also attracts bald eagles, who swoop down to devour the bodies of the spawned out salmon.",
+          "Park naturalists are available at the Freeman King Visitor Centre, which offers interpretive programs and informative lectures about the area\u2019s natural history for individuals and groups. The park also features a large picnic area with shelters, as well as vehicle accessible camping and group sites.",
+          "For your convenience during the summer season, this park has a small concession managed by the park operator."
+        ]
+      }
+    }
+  },
+  {
+    "model": "park.park",
+    "pk": 637,
+    "fields": {
+      "name": "Peace Arch Park",
+      "data": {
+        "url": "https://bcparks.ca/peace-arch-park/",
+        "image": "https://nrs.objectstore.gov.bc.ca/kuwyyf/RS_7384_LM_30_copy_gal_a8df537061.jpg",
+        "status": "open",
+        "gallery": [
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_7384_LM_30_copy_gal_a8df537061.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_7381_LM_28_gal_88e2f785d4.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_7382_LM_29_gal_715357b7e3.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_7373_LM_26_gal_9b2d514d14.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_7378_LM_24_gal_7a5ada263d.jpg"
+        ],
+        "calendar": "The park gate is open year-round, from 8 am to 8 pm, daily",
+        "features": {
+          "Picnic areas": "picnic-area.svg",
+          "Pets on leash": "pets-on-leash.svg"
+        },
+        "latitude": "49.004088",
+        "location": "Lower Mainland",
+        "longitude": "-122.757699",
+        "description": [
+          "Peace Arch Park is unique in the BC Parks system. Its formal lawns and gardens straddle the 49th parallel, so planning and development are managed in partnership with Washington State Parks.",
+          "The Peace Arch itself, dedicated in 1921, was the first such structure in the world. It was built on the international boundary between Canada and the United States to commemorate the lasting peace between the two countries. School children from both countries donated money for the purchase of the land surrounding the Peace Arch and, in 1939, the Canadian portion of Peace Arch Park was officially dedicated.",
+          "The park provides opportunities for walking as well as indoor and outdoor picnicking."
+        ]
+      }
+    }
+  },
+  {
+    "model": "park.park",
+    "pk": 646,
+    "fields": {
+      "name": "Porteau Cove Park",
+      "data": {
+        "url": "Xhttps://bcparks.ca/porteau-cove-park/XX",
+        "image": "https://nrs.objectstore.gov.bc.ca/kuwyyf/RS_2678_Proteau_Cove_2_gal_4b3a85176d.jpg",
+        "status": "open",
+        "gallery": [
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_2677_Porteau_Cove_gal_4ac745f453.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_2680_0314_00_HQLD_0009_pan_gal_610a81b823.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_8766_0314_00_HQLD_0005_gal_7df209e389.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_8767_0314_00_HQLD_0011_gal_f38cc94c17.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_8434_Porteaux_SL_42_gal_03bb779952.jpg"
+        ],
+        "calendar": "The park gate is open year-round",
+        "features": {
+          "Hiking": "hiking.svg",
+          "Cycling": "cycling.svg",
+          "Swimming": "swimming.svg",
+          "Picnic areas": "picnic-area.svg",
+          "Pets on leash": "pets-on-leash.svg",
+          "Frontcountry camping": "frontcountry-camping.svg"
+        },
+        "latitude": "49.556322",
+        "location": "Lower Mainland",
+        "longitude": "-123.238203",
+        "description": [
+          "Situated on the most southerly fjord in North America, Porteau Cove Provincial Park features waterfront campsites with a view over Howe Sound to the mountains beyond. An old ship has been sunk to provide interest for scuba divers and to attract marine life. There are special facilities for divers. Adjacent train tracks are active and occasional noise disturbance may occur."
+        ]
+      }
+    }
+  },
+  {
+    "model": "park.park",
+    "pk": 679,
+    "fields": {
+      "name": "Sasquatch Park",
+      "data": {
+        "url": "https://bcparks.ca/sasquatch-park/",
+        "image": "https://nrs.objectstore.gov.bc.ca/kuwyyf/RS_7756_Sasquatch_Iain_Robert_Reid_8_gal_5c957a5763.jpg",
+        "status": "open",
+        "gallery": [
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_7782_Sasquatch_Iain_Robert_Reid_46_gal_e77a88ffd1.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_7751_Sasquatch_Iain_Robert_Reid_4_gal_6ce0526c31.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_7766_Sasquatch_Iain_Robert_Reid_21_gal_0ff52fbf28.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_7778_Sasquatch_Iain_Robert_Reid_36_gal_22f8fd465c.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_RS_7774_Sasquatch_Iain_Robert_Reid_17_gal_7270118209.jpg"
+        ],
+        "calendar": "The park gate is open April 1, 2024 to October 15, 2024",
+        "features": {
+          "Hiking": "hiking.svg",
+          "Cycling": "cycling.svg",
+          "Swimming": "swimming.svg",
+          "Picnic areas": "picnic-area.svg",
+          "Pets on leash": "pets-on-leash.svg",
+          "Frontcountry camping": "frontcountry-camping.svg"
+        },
+        "latitude": "49.349805",
+        "location": "Lower Mainland",
+        "longitude": "-121.723289",
+        "description": [
+          "Located north of Harrison Hot Springs, Sasquatch Park is characterized by a series of pocket lakes, a unique second-growth and birch forest, and scenic mountain ridges.",
+          "Hicks Lake and Deer Lake are ideal for motorboating and canoeing, while Trout Lake provides a tranquil fishing experience. Visitors can also enjoy camping, hiking, wildlife viewing, and picnicking."
+        ]
+      }
+    }
+  },
+  {
+    "model": "park.park",
+    "pk": 744,
+    "fields": {
+      "name": "Tyhee Lake Park",
+      "data": {
+        "url": "https://bcparks.ca/tyhee-lake-park/",
+        "image": "https://nrs.objectstore.gov.bc.ca/kuwyyf/dbc_131246_dbc_1200_px_Tyhee_9ade1cba78.jpg",
+        "status": "open",
+        "gallery": [
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_dbc_131246_dbc_1200_px_Tyhee_9ade1cba78.jpg",
+          "https://nrs.objectstore.gov.bc.ca/kuwyyf/small_dbc_131241_dbc_1200_px_Tyhee_986da7fb45.jpg"
+        ],
+        "calendar": "The park gate is open year-round",
+        "features": {
+          "Hiking": "hiking.svg",
+          "Cycling": "cycling.svg",
+          "Swimming": "swimming.svg",
+          "Picnic areas": "picnic-area.svg",
+          "Pets on leash": "pets-on-leash.svg",
+          "Frontcountry camping": "frontcountry-camping.svg"
+        },
+        "latitude": "54.706469",
+        "location": "Skeena East",
+        "longitude": "-127.038423",
+        "description": [
+          "Tyhee Lake Park is situated in the beautiful Bulkley Valley. To the west are the Telkwa and Bulkley Ranges of the Hazelton Mountains and to the east is the Babine Range of the Skeena Mountains.",
+          "Back from the sandy beachfront on Tyhee Lake is a forest of second-growth aspen, replacing the original cover that was previously destroyed by fire. Visitors enjoy hiking, walking, swimming, picnicking, and nature viewing. Paddle board rentals and a concession stand are now available. During the winter, ice fishing and cross-country skiing are popular activities in this park."
+        ]
+      }
+    }
+  }
+]

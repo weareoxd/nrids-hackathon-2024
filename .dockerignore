@@ -1,0 +1,27 @@
+# Ignore node_modules directory
+frontend/node_modules
+
+# Ignore build output directory
+frontend/dist
+
+# Ignore local environment configuration files
+.env
+.env.local
+.env.example
+**/.env
+**/.env.local
+**/.env.example
+
+# Ignore log files
+*.log
+
+# Ignore Docker-related files
+Dockerfile
+
+# Ignore macOS system files
+.DS_Store
+**/.DS_Store
+
+# Ignore editor configuration files
+**/.vscode
+**/.devcontainer

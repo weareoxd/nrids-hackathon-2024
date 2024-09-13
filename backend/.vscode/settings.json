@@ -1,0 +1,9 @@
+{
+  "files.exclude": {
+    ".coverage": true,
+    ".pytest_cache": true
+  },
+  "search.exclude": {
+    "htmlcov/": true
+  }
+}
