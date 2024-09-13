@@ -1,0 +1,264 @@
+name: Build and deploy to AWS ECS
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+env:
+  AWS_REGION: ca-central-1
+  AWS_ECS_CLUSTER: DevCluster
+
+jobs:
+  deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Slack notification (before build)
+        run: |
+          response=$(curl -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data '{
+            "channel": "${{ vars.SLACK_CHANNEL_ID }}", 
+            "attachments": [
+              {
+                "color": "warning",
+                "fields": [
+                  {
+                    "title": "Status",
+                    "value": "Build started",
+                    "short": false
+                  },
+                  {
+                    "title": "Repository",
+                    "value": "${{ github.repository }}",
+                    "short": true
+                  },
+                  {
+                    "title": "Branch",
+                    "value": "${{ github.ref }}",
+                    "short": true
+                  },
+                  {
+                    "title": "Commit Message",
+                    "value": "${{ github.event.head_commit.message }}",
+                    "short": false
+                  },
+                  {
+                    "title": "Commit Author",
+                    "value": "${{ github.event.head_commit.author.name }}",
+                    "short": true
+                  },
+                  {
+                    "title": "Commit SHA",
+                    "value": "${{ github.sha }}",
+                    "short": true
+                  }
+                ]
+              }
+            ]
+          }' https://slack.com/api/chat.postMessage)
+          echo "response=$response" >> $GITHUB_ENV
+          echo "SLACK_TS=$(echo $response | jq -r '.ts')" >> $GITHUB_ENV
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ca-central-1
+
+      - name: Scale down task
+        run: |
+          aws ecs update-service \
+            --cluster ${{ env.AWS_ECS_CLUSTER }} \
+            --service ${{ vars.AWS_ECS_SERVICE }} \
+            --region ${{ env.AWS_REGION }} \
+            --desired-count 0 \
+            --force-new-deployment
+
+      - name: Log in to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Cache Docker layers
+        uses: actions/cache@v3
+        with:
+          path: |
+            /tmp/.buildx-cache
+            ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Build, tag, and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          platforms: linux/arm64
+          push: true
+          tags: '${{ vars.AWS_ECR_REPOSITORY }}:latest'
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
+
+      - name: Update Slack message (deployment started)
+        if: always()
+        run: |
+          curl -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data '{
+            "ts": "${{ env.SLACK_TS }}",
+            "channel": "${{ vars.SLACK_CHANNEL_ID }}", 
+            "attachments": [
+              {
+                "color": "warning",
+                "fields": [
+                  {
+                    "title": "Status",
+                    "value": "Deployment started",
+                    "short": false
+                  },
+                  {
+                    "title": "Repository",
+                    "value": "${{ github.repository }}",
+                    "short": true
+                  },
+                  {
+                    "title": "Branch",
+                    "value": "${{ github.ref }}",
+                    "short": true
+                  },
+                  {
+                    "title": "Commit Message",
+                    "value": "${{ github.event.head_commit.message }}",
+                    "short": false
+                  },
+                  {
+                    "title": "Commit Author",
+                    "value": "${{ github.event.head_commit.author.name }}",
+                    "short": true
+                  },
+                  {
+                    "title": "Commit SHA",
+                    "value": "${{ github.sha }}",
+                    "short": true
+                  }
+                ]
+              }
+            ]
+          }' https://slack.com/api/chat.update
+
+      - name: Start deployment
+        run: |
+          aws ecs update-service \
+            --cluster ${{ env.AWS_ECS_CLUSTER }} \
+            --service ${{ vars.AWS_ECS_SERVICE }} \
+            --region ${{ env.AWS_REGION }} \
+            --desired-count 1 \
+            --force-new-deployment
+
+      - name: Wait for deployment ready state
+        run: |
+          aws ecs wait services-stable \
+            --cluster ${{ env.AWS_ECS_CLUSTER }} \
+            --services ${{ vars.AWS_ECS_SERVICE }} \
+            --region ${{ env.AWS_REGION }}
+
+      - name: Update Slack message (finish)
+        if: success()
+        run: |
+          curl -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data '{
+            "ts": "${{ env.SLACK_TS }}",
+            "channel": "${{ vars.SLACK_CHANNEL_ID }}", 
+            "attachments": [
+              {
+                "color": "good",
+                "fields": [
+                  {
+                    "title": "Status",
+                    "value": "Deployment complete",
+                    "short": false
+                  },
+                  {
+                    "title": "Repository",
+                    "value": "${{ github.repository }}",
+                    "short": true
+                  },
+                  {
+                    "title": "Branch",
+                    "value": "${{ github.ref }}",
+                    "short": true
+                  },
+                  {
+                    "title": "Commit Message",
+                    "value": "${{ github.event.head_commit.message }}",
+                    "short": false
+                  },
+                  {
+                    "title": "Commit Author",
+                    "value": "${{ github.event.head_commit.author.name }}",
+                    "short": true
+                  },
+                  {
+                    "title": "Commit SHA",
+                    "value": "${{ github.sha }}",
+                    "short": true
+                  }
+                ],
+                "actions": [
+                  {
+                    "type": "button",
+                    "text": "View application",
+                    "url": "${{ vars.APP_URL }}"
+                  }
+                ]
+              }
+            ]
+          }' https://slack.com/api/chat.update
+
+      - name: Update Slack message (failure)
+        if: failure()
+        run: |
+          curl -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data '{
+            "ts": "${{ env.SLACK_TS }}",
+            "channel": "${{ vars.SLACK_CHANNEL_ID }}", 
+            "attachments": [
+              {
+                "color": "danger",
+                "fields": [
+                  {
+                    "title": "Status",
+                    "value": "Build and/or deployment failed",
+                    "short": false
+                  },
+                  {
+                    "title": "Repository",
+                    "value": "${{ github.repository }}",
+                    "short": true
+                  },
+                  {
+                    "title": "Branch",
+                    "value": "${{ github.ref }}",
+                    "short": true
+                  },
+                  {
+                    "title": "Commit Message",
+                    "value": "${{ github.event.head_commit.message }}",
+                    "short": false
+                  },
+                  {
+                    "title": "Commit Author",
+                    "value": "${{ github.event.head_commit.author.name }}",
+                    "short": true
+                  },
+                  {
+                    "title": "Commit SHA",
+                    "value": "${{ github.sha }}",
+                    "short": true
+                  }
+                ],
+              }
+            ]
+          }' https://slack.com/api/chat.update
