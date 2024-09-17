@@ -1,0 +1,46 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.140.1/containers/docker-existing-docker-compose
+{
+  "name": "NRIDS Hackathon Backend",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "nrids_hackathon_backend",
+  "postCreateCommand": "poetry install && python manage.py migrate && python manage.py runserver 0.0.0.0:8000",
+  "workspaceFolder": "/var/www/backend",
+  "forwardPorts": [8000],
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"],
+      "settings": {
+        "editor.formatOnSave": true,
+        "files.insertFinalNewline": true,
+        "python.pythonPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.lintOnSave": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.pylintArgs": [
+          "--load-plugins=pylint_django",
+          "--disable=django-not-configured",
+          "--disable=missing-module-docstring",
+          "--disable=missing-class-docstring",
+          "--disable=missing-function-docstring"
+        ],
+        "python.linting.flake8Enabled": true,
+        "python.formatting.provider": "black",
+        "python.testing.pytestArgs": ["app"],
+        "python.testing.unittestEnabled": false,
+        "python.testing.nosetestsEnabled": false,
+        "python.testing.pytestEnabled": true,
+        "[python]": {
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "always"
+          }
+        },
+        "files.exclude": {
+          "**/.git": true,
+          "**/.DS_Store": true,
+          "**/__pycache__": true
+        }
+      }
+    }
+  }
+}
