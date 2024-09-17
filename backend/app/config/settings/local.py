@@ -14,10 +14,6 @@ class Local(Base):
         r"^http:\/\/(localhost|(127\.0\.0\.1))(:(8080|5173))?$"
     ]
 
-    STATICFILES_DIRS = [
-        "/var/www/backend/app/static/",
-    ]
-
     THIRD_PARTY_APPS = Base.THIRD_PARTY_APPS + ["django_extensions"]
 
     QUERYCOUNT = {

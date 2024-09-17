@@ -1,4 +1,5 @@
 import httpx
+from configurations.values import Value
 
 from .base import Base
 
@@ -13,6 +14,39 @@ class Production(Base):
     """
 
     STATIC_ROOT = "/var/www/html/static"
+
+    # S3 bucket settings
+    THIRD_PARTY_APPS = Base.THIRD_PARTY_APPS + ["storages"]  # noqa: F841
+
+    AWS_ACCESS_KEY_ID = Value(  # noqa: F841
+        "",
+        environ_prefix=None,
+    )
+    AWS_SECRET_ACCESS_KEY = Value(  # noqa: F841
+        "",
+        environ_prefix=None,
+    )
+    AWS_STORAGE_BUCKET_NAME = Value(
+        "",
+        environ_prefix=None,
+    )
+    AWS_S3_REGION_NAME = Value(  # noqa: F841
+        "ca-central-1",
+        environ_prefix=None,
+    )
+    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+
+    # For serving static files directly from S3
+    AWS_S3_URL_PROTOCOL = "https"
+    AWS_S3_USE_SSL = True  # noqa: F841
+    AWS_S3_VERIFY = True  # noqa: F841
+
+    # Static and media file configuration
+    STATIC_URL = f"{AWS_S3_URL_PROTOCOL}://{AWS_S3_CUSTOM_DOMAIN}/static/"  # noqa: F841
+    STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"  # noqa: F841
+
+    MEDIA_URL = f"{AWS_S3_URL_PROTOCOL}://{AWS_S3_CUSTOM_DOMAIN}/media/"  # noqa: F841
+    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"  # noqa: F841
 
     @classmethod
     def setup(cls):
