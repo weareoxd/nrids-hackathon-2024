@@ -17,7 +17,7 @@ The application is composed of a containerized [Django](https://www.djangoprojec
   - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) for linting Python files
   - [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) for using the Docker container as a development environment
   - [EditorConfig for VS Code extension](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) for ensuring consistant end of line for files across machines for existing files
-- [Node.JS 18+](https://nodejs.org/en/) for building and serving the Vue.js frontend
+- [Node.JS 20](https://nodejs.org/en/) for building and serving the Vue.js frontend
 - [Docker](https://download.docker.com/mac/stable/Docker.dmg) for a containerized local development environment
 
 ## <a name="important"></a>Important
@@ -44,7 +44,7 @@ using Visual Studio code with the recommended extensions, the pre-commit hook fo
 
 ### <a name="frontend"></a>Frontend development
 
-See the [Frontend README](frontend/README.md) for details on setting up and building the frontend, which is accessible at [http://localhost:9000](http://localhost:9000).
+See the [Frontend README](frontend/README.md) for details on setting up and building the frontend, which is accessible at [http://localhost:5173](http://localhost:5173).
 
 ### <a name="backend"></a>Backend development
 

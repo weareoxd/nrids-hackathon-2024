@@ -42,20 +42,20 @@ RUN poetry export -f requirements.txt --output requirements.txt && \
 # ------------------------------------------------------------
 # Frontend builder
 # ------------------------------------------------------------
-FROM --platform=linux/amd64 node:18-slim AS fe-builder
+FROM --platform=linux/amd64 node:20-slim AS fe-builder
 
 # Set working directory
 WORKDIR /app
 
 # Install dependencies
-COPY frontend/package*.json ./
-RUN npm install
+COPY frontend/package.json frontend/yarn.lock ./
+RUN yarn install
 
 # Copy the rest of the application code
 COPY frontend/ ./
 
 # Build the application
-RUN npm run build
+RUN yarn run build
 
 
 # ------------------------------------------------------------
