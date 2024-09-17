@@ -166,18 +166,19 @@ class Base(Configuration):
     # Internationalization
     # https://docs.djangoproject.com/en/5.0/topics/i18n/
     LANGUAGE_CODE = "en-us"
-    TIME_ZONE = "America/Edmonton"
+    TIME_ZONE = "America/Vancouver"
     USE_I18N = True
     USE_TZ = True
 
     # Static files (CSS, JavaScript, Images)
     # https://docs.djangoproject.com/en/5.0/howto/static-files/
     STATIC_URL = "static/"
+    STATIC_ROOT = os.path.join(BASE_DIR, "../static")
 
     # Uploads
     # https://docs.djangoproject.com/en/5.0/topics/http/file-uploads/
-    MEDIA_URL = "/files/"
-    MEDIA_ROOT = os.path.join(BASE_DIR, "../files")
+    MEDIA_URL = "media/"
+    MEDIA_ROOT = os.path.join(BASE_DIR, "../media")
     FILE_UPLOAD_PERMISSIONS = 0o644
 
     # HTTP
