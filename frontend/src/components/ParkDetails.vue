@@ -1,6 +1,9 @@
 <template>
-  <div>park details: {{ park }}</div>
-  <div><FileUpload /></div>
+  <div class="park-details">
+    <h1>{{ park.name }}</h1>
+    <div>park details: {{ park }}</div>
+    <div><FileUpload /></div>
+  </div>
 </template>
 
 <script setup>

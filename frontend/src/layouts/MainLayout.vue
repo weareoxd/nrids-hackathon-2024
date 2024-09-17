@@ -10,7 +10,10 @@
           >golden ears</router-link
         >
         /
-        <router-link :to="{ name: 'sasquatch-park' }">sasquatch</router-link> /
+        <router-link :to="{ name: 'sasquatch-park' }"
+          >sasquatch (uploader demo)</router-link
+        >
+        /
         <router-link :to="{ name: 'cultus-lake-park' }"
           >cultus lake</router-link
         >
@@ -85,7 +88,7 @@ function toggleLeftDrawer() {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .q-page {
   padding: 1em;
 }
