@@ -30,6 +30,19 @@
     </q-drawer>
 
     <q-page-container>
+      <nav>
+        nav here:
+        <router-link :to="{ name: 'golden-ears-park' }"
+          >golden ears</router-link
+        >
+        /
+        <router-link :to="{ name: 'sasquatch-park' }">sasquatch</router-link> /
+        <router-link :to="{ name: 'cultus-lake-park' }"
+          >cultus lake</router-link
+        >
+        /
+        <router-link :to="{ name: 'tyhee-lake-park' }">tyhee lake</router-link>
+      </nav>
       <router-view />
     </q-page-container>
   </q-layout>
