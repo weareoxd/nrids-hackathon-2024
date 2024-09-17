@@ -48,7 +48,7 @@ FROM --platform=linux/amd64 node:20-slim AS fe-builder
 WORKDIR /app
 
 # Install dependencies
-COPY frontend/package*.json ./
+COPY frontend/package.json frontend/yarn.lock ./
 RUN yarn install
 
 # Copy the rest of the application code
