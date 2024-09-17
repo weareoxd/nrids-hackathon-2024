@@ -27,6 +27,8 @@ Dismiss the notification until the initial setup is complete
 Create a local copy of the example env file. This file is used to store secrets used by the
 app.
 
+*Note:* You will need to update the `OPENAI_API_KEY` value from 1Password
+
 ```
 # Copy the file and populate .env
 cp .env.example .env
