@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page class="park">
     <h1>Cultus Lake Park</h1>
   </q-page>
 </template>

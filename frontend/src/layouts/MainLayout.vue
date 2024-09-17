@@ -107,3 +107,9 @@ function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 </script>
+
+<style lang="scss">
+.q-page {
+  padding: 1em;
+}
+</style>
