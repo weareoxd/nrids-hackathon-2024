@@ -44,7 +44,7 @@ using Visual Studio code with the recommended extensions, the pre-commit hook fo
 
 ### <a name="frontend"></a>Frontend development
 
-See the [Frontend README](frontend/README.md) for details on setting up and building the frontend, which is accessible at [http://localhost:5173](http://localhost:5173).
+See the [Frontend README](frontend/README.md) for details on setting up and building the frontend, which is accessible at [http://localhost:9000](http://localhost:9000).
 
 ### <a name="backend"></a>Backend development
 

@@ -107,7 +107,7 @@ RUN mv .build/nginx/nginx.conf /etc/nginx/ && \
     rm poetry.lock pyproject.toml
 
 # Copy frontend files
-COPY --from=fe-builder /app/dist /var/www/html
+COPY --from=fe-builder /app/dist/spa /var/www/html
 
 # Server
 EXPOSE 8080

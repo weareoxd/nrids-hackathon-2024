@@ -1,6 +1,4 @@
-# Hackathon Frontend (frontend)
-
-DDS Hackathon 2024
+## NRIDS Hackathon 2024 Frontend
 
 ## Install the dependencies
 
@@ -13,7 +11,7 @@ npm install
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 
 ```bash
-quasar dev
+npm run dev
 ```
 
 ### Lint the files
@@ -35,7 +33,7 @@ npm run format
 ### Build the app for production
 
 ```bash
-quasar build
+npm run quasar build
 ```
 
 ### Customize the configuration
