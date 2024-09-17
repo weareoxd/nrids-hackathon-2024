@@ -1,35 +1,9 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="hHh lpR fFf">
+    <q-header bordered class="bg-primary text-white">
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title> Quasar App </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-toolbar-title> Hackathon 2024 </q-toolbar-title>
       </q-toolbar>
-    </q-header>
-
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-      <q-list>
-        <q-item-label header> Essential Links </q-item-label>
-
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
-
-    <q-page-container>
       <nav>
         nav here:
         <router-link :to="{ name: 'golden-ears-park' }"
@@ -43,6 +17,9 @@
         /
         <router-link :to="{ name: 'tyhee-lake-park' }">tyhee lake</router-link>
       </nav>
+    </q-header>
+
+    <q-page-container>
       <router-view />
     </q-page-container>
   </q-layout>
@@ -111,5 +88,11 @@ function toggleLeftDrawer() {
 <style lang="scss">
 .q-page {
   padding: 1em;
+}
+
+nav {
+  a {
+    color: lighten($color: $info, $amount: 25%);
+  }
 }
 </style>
