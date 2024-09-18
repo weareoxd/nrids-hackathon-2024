@@ -1,0 +1,72 @@
+[
+  {
+    "model": "park.park",
+    "pk": 467,
+    "fields": {
+      "name": "Cultus Lake Park",
+      "url": "https://bcparks.ca/cultus-lake-park/",
+      "latitude": "49.045897",
+      "longitude": "-121.977774"
+    }
+  },
+  {
+    "model": "park.park",
+    "pk": 509,
+    "fields": {
+      "name": "Golden Ears Park",
+      "url": "https://bcparks.ca/golden-ears-park/",
+      "latitude": "49.499726",
+      "longitude": "-122.450121"
+    }
+  },
+  {
+    "model": "park.park",
+    "pk": 514,
+    "fields": {
+      "name": "Goldstream Park",
+      "url": "https://bcparks.ca/goldstream-park/",
+      "latitude": "48.471854",
+      "longitude": "-123.555082"
+    }
+  },
+  {
+    "model": "park.park",
+    "pk": 637,
+    "fields": {
+      "name": "Peace Arch Park",
+      "url": "https://bcparks.ca/peace-arch-park/",
+      "latitude": "49.004088",
+      "longitude": "-122.757699"
+    }
+  },
+  {
+    "model": "park.park",
+    "pk": 646,
+    "fields": {
+      "name": "Porteau Cove Park",
+      "url": "https://bcparks.ca/porteau-cove-park/",
+      "latitude": "49.556322",
+      "longitude": "-123.238203"
+    }
+  },
+  {
+    "model": "park.park",
+    "pk": 679,
+    "fields": {
+      "name": "Sasquatch Park",
+      "url": "https://bcparks.ca/sasquatch-park/",
+      "latitude": "49.349805",
+      "longitude": "-121.723289"
+    }
+  },
+  {
+    "model": "park.park",
+    "pk": 744,
+    "fields": {
+      "name": "Tyhee Lake Park",
+      "url": "https://bcparks.ca/tyhee-lake-park/",
+      "latitude": "54.706469",
+      "longitude": "-127.038423"
+    }
+  }
+]

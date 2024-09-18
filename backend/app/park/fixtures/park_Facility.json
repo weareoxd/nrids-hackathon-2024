@@ -1,0 +1,275 @@
+[
+  {
+    "model": "park.facility",
+    "pk": 11,
+    "fields": {
+      "name": "Entrance"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 12,
+    "fields": {
+      "name": "Parking Stalls"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 13,
+    "fields": {
+      "name": "Dimensions of Designated Spaces for Expected Vehicles"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 14,
+    "fields": {
+      "name": "Accessible Stall Surface is Level, Stable, Firm and Slip-Resistant"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 15,
+    "fields": {
+      "name": "Clear Signage - Accessible Stall"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 16,
+    "fields": {
+      "name": "Safe and Direct Access to Pedestrian Pathway"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 17,
+    "fields": {
+      "name": "Drop-Off Zone"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 18,
+    "fields": {
+      "name": "General Signage"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 21,
+    "fields": {
+      "name": "Exterior Pathways"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 22,
+    "fields": {
+      "name": "Exterior Ramps"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 23,
+    "fields": {
+      "name": "Exterior Stairs"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 31,
+    "fields": {
+      "name": "Designated Accessible Campsites"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 32,
+    "fields": {
+      "name": "Standard Campsites"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 41,
+    "fields": {
+      "name": "Picnic Tables (non-campsite)"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 42,
+    "fields": {
+      "name": "Garbage and Recycling Receptacles"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 43,
+    "fields": {
+      "name": "Benches"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 44,
+    "fields": {
+      "name": "Water Stand Pipes"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 45,
+    "fields": {
+      "name": "Drinking Fountain"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 46,
+    "fields": {
+      "name": "Outdoor Rinsing Shower"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 51,
+    "fields": {
+      "name": "Pit Toilets"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 52,
+    "fields": {
+      "name": "Toilet Buildings Washrooms"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 53,
+    "fields": {
+      "name": "Showers and Change Rooms"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 61,
+    "fields": {
+      "name": "Directional Signs"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 62,
+    "fields": {
+      "name": "Trailhead Signs"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 63,
+    "fields": {
+      "name": "Amenity Signs"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 71,
+    "fields": {
+      "name": "Location Details"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 72,
+    "fields": {
+      "name": "Surface Details"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 74,
+    "fields": {
+      "name": "Amphitheatre"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 81,
+    "fields": {
+      "name": "Viewing Areas"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 82,
+    "fields": {
+      "name": "Docks/Boating Facilities"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 83,
+    "fields": {
+      "name": "Fishing Piers and Platforms"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 91,
+    "fields": {
+      "name": "Stable, Firm and Slip-Resistant"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 92,
+    "fields": {
+      "name": "Slope"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 93,
+    "fields": {
+      "name": "Width"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 94,
+    "fields": {
+      "name": "Seating"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 95,
+    "fields": {
+      "name": "Height Clearance"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 96,
+    "fields": {
+      "name": "Signage"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 101,
+    "fields": {
+      "name": "Miscellaneous"
+    }
+  },
+  {
+    "model": "park.facility",
+    "pk": 102,
+    "fields": {
+      "name": "Play Grounds"
+    }
+  }
+]
