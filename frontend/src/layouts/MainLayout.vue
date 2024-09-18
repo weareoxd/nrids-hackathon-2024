@@ -2,9 +2,13 @@
   <q-layout view="hHh lpR fFf">
     <q-header bordered class="bg-primary text-white">
       <q-toolbar>
+        <q-avatar class="no-border-radius">
+          <img src="../assets/bcparks-logo-vertical-reversed.svg">
+        </q-avatar>
         <q-toolbar-title>
           <router-link :to="{ name: 'home' }">Hackathon 2024</router-link>
         </q-toolbar-title>
+        <q-btn color="white" text-color="primary" label="Upload photo" />
       </q-toolbar>
       <nav>
         nav here:
@@ -26,6 +30,9 @@
 
     <q-page-container>
       <router-view />
+      <q-page-sticky position="bottom-right" :offset="[18, 18]">
+        <Chatbot />
+      </q-page-sticky>
     </q-page-container>
   </q-layout>
 </template>
@@ -33,6 +40,7 @@
 <script setup>
 import { ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
+import Chatbot from "src/components/ChatbotModal.vue";
 
 defineOptions({
   name: "MainLayout",
