@@ -1,6 +1,6 @@
 <template>
   <q-card class="my-card">
-    <img src="https://cdn.quasar.dev/img/mountains.jpg">
+    <img src="https://cdn.quasar.dev/img/mountains.jpg" />
 
     <q-card-section>
       <div class="text-h6">Our Changing Planet</div>
@@ -15,12 +15,13 @@
 
 <script>
 export default {
-  setup () {
+  setup() {
     return {
-      lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    }
-  }
-}
+      lorem:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    };
+  },
+};
 </script>
 
 <style lang="sass" scoped>

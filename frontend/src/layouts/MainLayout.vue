@@ -3,7 +3,7 @@
     <q-header bordered class="bg-primary text-white">
       <q-toolbar>
         <q-avatar class="no-border-radius">
-          <img src="../assets/bcparks-logo-vertical-reversed.svg">
+          <img src="~assets/bcparks-logo-vertical-reversed.svg" />
         </q-avatar>
         <q-toolbar-title>
           <router-link :to="{ name: 'home' }">Hackathon 2024</router-link>

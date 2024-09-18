@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import ParkCard from 'src/components/ParkCard.vue';
+import ParkCard from "src/components/ParkCard.vue";
 
 defineOptions({
   name: "IndexPage",
