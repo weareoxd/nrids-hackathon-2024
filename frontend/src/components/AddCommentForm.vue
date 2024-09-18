@@ -14,6 +14,42 @@
         hint="Name and surname"
       />
 
+      <q-input
+        v-model="name"
+        outlined
+        label="Your name *"
+        hint="Name and surname"
+      />
+
+      <!-- Custom input component from APL, if we want to use it -->
+      <AplInput
+        v-model="name"
+        filled
+        label="Your name *"
+        hint="Name and surname"
+      />
+
+      <q-select
+        v-model="selection"
+        filled
+        label="Park *"
+        :options="[
+          { label: 'Park 1', value: { name: 'Park 1' } },
+          { label: 'Park 2', value: { name: 'Park 2' } },
+        ]"
+      />
+
+      <!-- Custom select component from APL, if we want to use it -->
+      <AplSelect
+        v-model="selection"
+        filled
+        label="Park *"
+        :options="[
+          { label: 'Park 1', value: { name: 'Park 1' } },
+          { label: 'Park 2', value: { name: 'Park 2' } },
+        ]"
+      />
+
       <FileUpload />
 
       <q-input v-model="foo" filled label="Another field *" />
@@ -28,7 +64,9 @@
 
 <script setup>
 import { ref } from "vue";
-import FileUpload from "./FileUpload.vue";
+import FileUpload from "components/FileUpload.vue";
+import AplInput from "components/AplInput.vue";
+import AplSelect from "components/AplSelect.vue";
 
 defineOptions({
   name: "AddCommentForm",
@@ -42,6 +80,7 @@ const emit = defineEmits(["cancel"]);
 
 const name = ref("");
 const foo = ref("");
+const selection = ref(null);
 
 function onSubmit() {
   console.log("submitting form", name.value, foo.value, park.name);
