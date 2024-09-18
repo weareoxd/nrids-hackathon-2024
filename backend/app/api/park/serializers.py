@@ -22,9 +22,6 @@ class FeedbackSerializer(serializers.ModelSerializer):
             photo.file_url if photo.file_url else photo.file.url for photo in photos
         ]
 
-    def get_facility_name(self, obj):
-        return obj.facility.name if obj.facility else None
-
 
 class ParkSerializer(serializers.ModelSerializer):
     class Meta:
@@ -51,15 +48,6 @@ class ParkDetailSerializer(ParkSerializer):
             "longitude",
             "feedback",
         )
-
-    def get_url(self, obj):
-        return obj.park.url
-
-    def get_latitude(self, obj):
-        return obj.park.latitude
-
-    def get_longitude(self, obj):
-        return obj.park.longitude
 
     def get_feedback(self, obj):
         return FeedbackSerializer(obj.feedback, many=True).data
