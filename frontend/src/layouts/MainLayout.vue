@@ -2,7 +2,9 @@
   <q-layout view="hHh lpR fFf">
     <q-header bordered class="bg-primary text-white">
       <q-toolbar>
-        <q-toolbar-title> Hackathon 2024 </q-toolbar-title>
+        <q-toolbar-title>
+          <router-link :to="{ name: 'home' }">Hackathon 2024</router-link>
+        </q-toolbar-title>
       </q-toolbar>
       <nav>
         nav here:
