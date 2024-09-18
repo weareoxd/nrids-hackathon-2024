@@ -1,31 +1,28 @@
 <template>
   <q-card class="my-card">
-    <img src="https://cdn.quasar.dev/img/mountains.jpg" />
+    <q-img :src="park.image" :alt="park.name" height="240px" />
 
     <q-card-section>
-      <div class="text-h6">Our Changing Planet</div>
-      <div class="text-subtitle2">by John Doe</div>
-    </q-card-section>
-
-    <q-card-section class="q-pt-none">
-      {{ lorem }}
+      <h5>{{ park.name }}</h5>
+      <router-link :to="park.router.path"> View park > </router-link>
     </q-card-section>
   </q-card>
 </template>
 
-<script>
-export default {
-  setup() {
-    return {
-      lorem:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    };
+<script setup>
+import { defineProps } from "vue";
+
+const props = defineProps({
+  park: {
+    type: Object,
+    required: true,
   },
-};
+});
 </script>
 
 <style lang="sass" scoped>
 .my-card
   width: 100%
-  max-width: 250px
+  max-width: 400px
+  margin: 32px 0
 </style>

@@ -11,7 +11,7 @@
             class="site-title text-white text-bold"
             :to="{ name: 'home' }"
           >
-            Hackathon 2024
+            Accessible parks
           </router-link>
 
           <q-btn
