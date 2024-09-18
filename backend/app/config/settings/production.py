@@ -42,11 +42,15 @@ class Production(Base):
     AWS_S3_VERIFY = True  # noqa: F841
 
     # Static and media file configuration
-    STATIC_URL = f"{AWS_S3_URL_PROTOCOL}://{AWS_S3_CUSTOM_DOMAIN}/static/"  # noqa: F841
-    STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"  # noqa: F841
-
+    # STATIC_URL = f"{AWS_S3_URL_PROTOCOL}://{AWS_S3_CUSTOM_DOMAIN}/static/"  # noqa: F841
     MEDIA_URL = f"{AWS_S3_URL_PROTOCOL}://{AWS_S3_CUSTOM_DOMAIN}/media/"  # noqa: F841
-    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"  # noqa: F841
+
+    STORAGES = {
+        "default": {"BACKEND": "app.config.storage.PublicMediaStorage"},
+        "staticfiles": {
+            "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage"
+        },
+    }
 
     @classmethod
     def setup(cls):
