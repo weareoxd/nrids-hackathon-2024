@@ -1,14 +1,14 @@
 import os
 
 from django.conf import settings
-from django.urls import path
+from django.urls import include, path
 
-# from .contract import urls as contract_urls
+from .park import urls as park_urls
 from .views import HealthCheck
 
 urlpatterns = [
     path("health-check", HealthCheck.as_view(), name="health-check"),
-    # path("view/", include((view_urls, "view"))),
+    path("park/", include((park_urls, "park"))),
 ]
 
 
