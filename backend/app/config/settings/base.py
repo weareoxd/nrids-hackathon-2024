@@ -72,6 +72,7 @@ class Base(Configuration):
         "rest_framework",
     ]
     LOCAL_APPS = [
+        "app.core"
         # "app.contract.apps.ContractConfig",
     ]
 
