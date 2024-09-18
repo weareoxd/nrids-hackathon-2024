@@ -23,6 +23,7 @@
         </div>
 
         <nav class="q-pa-sm">
+          <!-- Temporary(?) nav shortcuts to pages -->
           <router-link v-for="link in navLinks" :key="link.label" :to="link.to">
             {{ link.label }}
           </router-link>
@@ -40,17 +41,20 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed, onBeforeMount, ref } from "vue";
 import Chatbot from "src/components/ChatbotModal.vue";
-import parksList from "src/data/parksList";
+import { useParksList } from "src/data/useParksList";
 
-const navLinks = [
-  { label: "Home", to: { name: "home" } },
-  ...parksList.map((park) => ({
+const { parksList } = useParksList();
+
+const navLinks = computed(() => {
+  const links = parksList.value.map((park) => ({
+    to: { name: "park-details", params: { slug: park.slug } },
     label: park.name,
-    to: { name: park.router.name },
-  })),
-];
+  }));
+
+  return links;
+});
 
 defineOptions({
   name: "MainLayout",

@@ -1,5 +1,9 @@
 ## NRIDS Hackathon 2024 Frontend
 
+## Set environment variables
+
+Refer to .env.example for the expected environment variables. If a .env file exists in this /frontend directory, it will be parsed at runtime or build time. If the variables already exist in the environment, they will be used instead.
+
 ## Install the dependencies
 
 ```bash

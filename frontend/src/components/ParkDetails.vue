@@ -1,10 +1,9 @@
 <template>
   <div class="park-details">
-    <h1>{{ park.name }}</h1>
-    <div>park details: {{ park }}</div>
+    <h1>park details page</h1>
 
-    <q-btn color="primary" @click="showAddCommentForm = true"
-      >Show comment form</q-btn
+    <q-btn v-if="park" color="primary" @click="showAddCommentForm = true"
+      >Share your experience</q-btn
     >
 
     <q-dialog v-model="showAddCommentForm">
@@ -22,14 +21,12 @@ defineOptions({
   name: "ParkDetails",
 });
 
-const { park } = defineProps({
-  park: { required: true, type: Object },
+const { parkId } = defineProps({
+  parkId: { required: true, type: Number },
 });
+
+const park = ref(null);
+// @TODO: fetch park details
 
 const showAddCommentForm = ref(false);
-
-onBeforeMount(() => {
-  const { data: details } = api.get("/");
-  console.log("details", details);
-});
 </script>

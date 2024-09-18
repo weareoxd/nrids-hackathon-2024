@@ -1,7 +1,3 @@
-import parksList from "src/data/parksList";
-
-const parkRoutes = parksList.map((park) => park.router);
-
 const routes = [
   {
     path: "/",
@@ -13,13 +9,19 @@ const routes = [
         component: () => import("pages/IndexPage.vue"),
       },
 
-      ...parkRoutes,
+      // wildcard route for park details
+      {
+        name: "park-details",
+        path: "/details/:slug",
+        component: () => import("pages/ParkDetailsPage.vue"),
+      },
     ],
   },
 
   // Always leave this as last one,
   // but you can also remove it
   {
+    name: "not-found",
     path: "/:catchAll(.*)*",
     component: () => import("pages/ErrorNotFound.vue"),
   },
