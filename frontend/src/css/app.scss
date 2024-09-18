@@ -1,1 +1,73 @@
 // app global css in SCSS form
+
+// fonts
+@font-face {
+  font-family: BC Sans;
+  src: url(./fonts/bcsans-regular.woff);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: BC Sans;
+  src: url(./fonts/bcsans-bold.woff);
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: BC Sans;
+  src: url(./fonts/bcsans-bold-italic.woff);
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: BC Sans;
+  src: url(./fonts/bcsans-italic.woff);
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: BC Sans;
+  src: url(./fonts/bcsans-light.woff);
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: BC Sans;
+  src: url(./fonts/bcsans-light-italic.woff);
+  font-weight: 300;
+  font-style: italic;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $font-family-base;
+  background-color: $grey-light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-weight: bold !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $primary;
+}
