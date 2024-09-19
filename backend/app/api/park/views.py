@@ -36,7 +36,7 @@ class ParkViewSet(
             "feedback_park",
         ).get(pk=obj.pk)
 
-        feedback = obj.feedback_park.all()
+        feedback = obj.feedback_park.all().order_by("-id")
 
         obj.feedback = feedback
 

@@ -47,7 +47,7 @@
         emit-value
         map-options
         :options="filteredParkOptions"
-        :rules="[(val) => !!val || 'Please select a park location']"
+        :rules="[val => !!val || 'Please select a park location']"
         @filter="filterParks"
       />
 
@@ -63,7 +63,7 @@
         emit-value
         map-options
         :options="filteredFacilityOptions"
-        :rules="[(val) => !!val || 'Please select a park facility']"
+        :rules="[val => !!val || 'Please select a park facility']"
         @filter="filterFacilities"
       />
 
@@ -73,7 +73,7 @@
         filled
         label="Comments"
         type="textarea"
-        :rules="[(val) => val.length || 'Please tell us about your experience']"
+        :rules="[val => val.length || 'Please tell us about your experience']"
       />
 
       <div class="form-buttons row">
@@ -82,6 +82,7 @@
           label="Submit"
           type="submit"
           color="primary"
+          :loading="isSubmitting"
         />
         <q-btn
           class="btn-cancel col-12 col-sm-2 q-mt-sm"
@@ -109,19 +110,19 @@ import { useQuasar } from "quasar";
 const $q = useQuasar();
 
 defineOptions({
-  name: "AddCommentForm",
+  name: "AddCommentForm"
 });
 
 const { park } = defineProps({
-  park: { required: false, type: [Object, null], default: null },
+  park: { required: false, type: [Object, null], default: null }
 });
 
 const { parksList, isLoading } = useParksList();
 
 const parkOptions = computed(() =>
-  parksList.value.map((park) => ({
+  parksList.value.map(park => ({
     label: park.name,
-    value: park.id,
+    value: park.id
   }))
 );
 const filteredParkOptions = ref(parkOptions.value);
@@ -132,10 +133,10 @@ watch(parksList, () => {
 });
 
 const { facilities } = useFacilitiesList();
-const facilityOptions = facilities.map((facility) => ({
+const facilityOptions = facilities.map(facility => ({
   // Use the facility name as the label and value
   label: facility.feature_name,
-  value: facility.feature_name,
+  value: facility.feature_name
 }));
 const filteredFacilityOptions = ref(facilityOptions);
 
@@ -147,6 +148,7 @@ const filePreviews = ref([]);
 const parkId = ref(park ? park.id : null);
 const facility = ref(null);
 const comments = ref("");
+const isSubmitting = ref(true);
 
 function onFileRejected(files) {
   console.log("Rejected files", files);
@@ -156,30 +158,32 @@ async function onSubmit(submitEvent) {
   const formData = new FormData(submitEvent.target);
 
   try {
+    isSubmitting.value = true;
     const response = await api.post("/park/feedback/", formData);
 
     // close the modal
     emit("cancel");
+    isSubmitting.value = false;
 
     $q.notify({
       type: "positive",
-      message: "Thank you! Your feedback has been submitted.",
+      message: "Thank you! Your feedback has been submitted."
     });
   } catch (error) {
+    isSubmitting.value = false;
     console.error("error", error);
     $q.notify({
       type: "negative",
-      message:
-        "There was a problem submitting your feedback. Please try again.",
+      message: "There was a problem submitting your feedback. Please try again."
     });
   }
 }
 
-const onFilesSelected = (files) => {
+const onFilesSelected = files => {
   filePreviews.value = [];
   for (let file of files) {
     const reader = new FileReader();
-    reader.onload = (e) => {
+    reader.onload = e => {
       filePreviews.value.push(e.target.result);
     };
     reader.readAsDataURL(file);
@@ -196,7 +200,7 @@ function filterFacilities(val, update, abort) {
     },
 
     // "ref" is the Vue reference to the QSelect
-    (ref) => {
+    ref => {
       if (val !== "" && ref.options.length > 0) {
         ref.setOptionIndex(-1); // reset optionIndex in case there is something selected
         ref.moveOptionSelection(1, true); // focus the first selectable option and do not update the input-value
@@ -215,7 +219,7 @@ function filterParks(val, update, abort) {
     },
 
     // "ref" is the Vue reference to the QSelect
-    (ref) => {
+    ref => {
       if (val !== "" && ref.options.length > 0) {
         ref.setOptionIndex(-1); // reset optionIndex in case there is something selected
         ref.moveOptionSelection(1, true); // focus the first selectable option and do not update the input-value
