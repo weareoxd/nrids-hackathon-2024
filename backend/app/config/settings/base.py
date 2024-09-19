@@ -55,7 +55,8 @@ class Base(Configuration):
         separator=" ",
         environ_prefix=None,
     )
-    CORS_ALLOWED_ORIGIN_REGEXES = []
+    CORS_ALLOW_ALL_ORIGINS = True
+    # CORS_ALLOWED_ORIGIN_REGEXES = []
 
     # Application definition
     DJANGO_APPS = [
