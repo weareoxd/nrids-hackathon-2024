@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.0.1",
   "description": "DDS Hackathon 2024",
-  "productName": "Hackathon Frontend",
+  "productName": "Accessible Parks",
   "author": "OXD",
   "private": true,
   "scripts": {
