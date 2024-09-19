@@ -5,9 +5,14 @@
     <p>parkData:</p>
     <pre>{{ parkData }}</pre>
 
-    <q-btn v-if="parkData" color="primary" @click="showAddCommentForm = true"
-      >Share your experience</q-btn
-    >
+    <q-btn
+      v-if="parkData"
+      icon="add_a_photo"
+      color="primary"
+      label="Share your experience"
+      size="lg"
+      @click="showAddCommentForm = true"
+    />
 
     <q-dialog v-model="showAddCommentForm">
       <AddCommentForm :park="parkData" @cancel="showAddCommentForm = false" />

@@ -7,18 +7,12 @@
             <img src="~assets/bcparks-logo-vertical-reversed.svg" height="96" />
           </router-link>
 
-          <router-link
-            class="site-title text-white text-bold"
-            :to="{ name: 'home' }"
-          >
-            Accessible parks
-          </router-link>
-
           <q-btn
             class="btn-add-comments q-mr-sm"
             color="white"
             text-color="primary"
             label="Share your experience"
+            icon="add_a_photo"
             @click="showAddCommentForm = true"
           />
 
@@ -59,7 +53,7 @@ defineOptions({
 header {
   .header-items {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 1em;
 
@@ -68,12 +62,8 @@ header {
       text-decoration: none;
     }
 
-    @media screen and (min-width: $breakpoint-sm-min) {
-      flex-direction: row;
-
-      .btn-add-comments {
-        margin-left: auto;
-      }
+    .btn-add-comments {
+      margin-left: auto;
     }
   }
 }
