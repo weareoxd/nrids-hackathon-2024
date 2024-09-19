@@ -1,0 +1,306 @@
+[
+    {
+        "model": "park.feature",
+        "pk": 1,
+        "fields": {
+            "name": "wheelchair accessible trails",
+            "description": "Trails designed with flat surfaces, minimal inclines, and no obstacles to accommodate wheelchair users."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 2,
+        "fields": {
+            "name": "accessible viewpoints",
+            "description": "Viewpoints with ramps or flat access, ensuring easy visibility for those with mobility issues."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 3,
+        "fields": {
+            "name": "accessible picnic areas",
+            "description": "Picnic areas with wide, flat surfaces, accessible tables, and easy wheelchair access."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 4,
+        "fields": {
+            "name": "accessible shelters",
+            "description": "Shelters that are easy to access for individuals with mobility challenges, featuring ramps, flat entrances, and accessible pathways."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 5,
+        "fields": {
+            "name": "accessible parking",
+            "description": "Parking spots located close to facilities, with extra space for wheelchair access, and clear markings."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 6,
+        "fields": {
+            "name": "wheelchair accessible restrooms",
+            "description": "Restrooms with wide stalls, handrails, accessible sinks, for wheelchair"
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 7,
+        "fields": {
+            "name": "family restrooms",
+            "description": "Gender-neutral restrooms with enough space for families, caregivers, and individuals needing assistance."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 8,
+        "fields": {
+            "name": "clear signage",
+            "description": "Large, easy-to-read signs accessible points of interest with good color contrast and symbols."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 9,
+        "fields": {
+            "name": "accessible maps",
+            "description": "Park maps that highlight accessible routes, facilities, and emergency stations, including tactile and braille options."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 10,
+        "fields": {
+            "name": "accessible campsites",
+            "description": "Campsites with hard surfaces, accessible tables, designated accessible sites, and pathways designed for easy access."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 11,
+        "fields": {
+            "name": "accessible cabins",
+            "description": "Cabins with ramps, wide doorways, accessible interiors"
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 12,
+        "fields": {
+            "name": "accessible public transportation",
+            "description": "Public transportation options that offer wheelchair access and accomodation"
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 13,
+        "fields": {
+            "name": "accessible visitor centers",
+            "description": "Visitor centers with accessible entrances, ramps, elevators."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 14,
+        "fields": {
+            "name": "automatic doors",
+            "description": "Doors that automatically open"
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 15,
+        "fields": {
+            "name": "braille signage",
+            "description": "Signage with braille text, allowing visually impaired visitors to navigate the park more easily."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 16,
+        "fields": {
+            "name": "tactile maps",
+            "description": "Maps with raised surfaces to assist visually impaired visitors in understanding the park layout."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 17,
+        "fields": {
+            "name": "accessible beach access",
+            "description": "Paths and ramps that allow wheelchair users to access the beach easily"
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 18,
+        "fields": {
+            "name": "floating beach wheelchairs",
+            "description": "Special wheelchairs designed to provide water access for individuals with mobility issues."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 19,
+        "fields": {
+            "name": "boardwalks",
+            "description": "Flat, even wooden walkways that make walking or wheeling through the park easier."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 20,
+        "fields": {
+            "name": "wide paths",
+            "description": "Paths with extra width to accommodate wheelchairs, strollers, and individuals needing more space."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 21,
+        "fields": {
+            "name": "sensory-friendly areas",
+            "description": "Quiet or low-sensory areas designed to provide a calming environment for visitors with sensory sensitivities."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 22,
+        "fields": {
+            "name": "inclusive play areas",
+            "description": "Playgrounds with accessible equipment and inclusive designs for children with different mobility levels."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 23,
+        "fields": {
+            "name": "accessible water facilities",
+            "description": "Water fountains and standpipes with accessible heights, operable handles."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 24,
+        "fields": {
+            "name": "accessible garbage and recycling receptacles",
+            "description": "Garbage receptacles designed for easy access by individuals with limited dexterity, including clear ground space and operable mechanisms."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 25,
+        "fields": {
+            "name": "accessible seating",
+            "description": "Benches and seating areas with backrests, armrests, and firm, level ground (seating)."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 26,
+        "fields": {
+            "name": "accessible boat launches",
+            "description": "Boat launch areas equipped with handrails, level surfaces, and accessible pathways for easy water access."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 27,
+        "fields": {
+            "name": "accessible changing facilities",
+            "description": "Changing rooms with level entry, accessible sinks, seating, and appropriate grab bars"
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 28,
+        "fields": {
+            "name": "accessible cooking facilities",
+            "description": "Food prep and cooking areas with accessible counters, sinks, and equipment"
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 29,
+        "fields": {
+            "name": "accessible pathways with minimal slopes",
+            "description": "Paths designed with gentle inclines, firm surfaces, and minimal obstacles or slopes"
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 30,
+        "fields": {
+            "name": "accessible ramps and thresholds",
+            "description": "Ramps with appropriate gradients and thresholds that are level or have minimal height."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 31,
+        "fields": {
+            "name": "accessible stairways",
+            "description": "Stairways with consistent rise and run, handrails, and tactile or color contrast indicators for safety."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 32,
+        "fields": {
+            "name": "accessible information kiosks",
+            "description": "Information kiosks that are easily accessible, including accessible heights and interactive features."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 33,
+        "fields": {
+            "name": "accessible by public transit",
+            "description": "Visitors can use public transit to reach the park."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 34,
+        "fields": {
+            "name": "accessible amphitheaters",
+            "description": "Amphitheaters with level seating areas, accessible entrances, and spaces for individuals with mobility aids."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 35,
+        "fields": {
+            "name": "accessible pit toilets",
+            "description": "Pit toilets with accessible features such as wider doorways, grab bars, appropriate toilet heights, and space for maneuvering."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 36,
+        "fields": {
+            "name": "accessible shower facilities",
+            "description": "Showers equipped with seating, grab bars, adjustable showerheads, and controls operable with minimal force."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 37,
+        "fields": {
+            "name": "accessible information boards",
+            "description": "Information boards with high-contrast text and Braille to assist visually impaired visitors."
+        }
+    },
+    {
+        "model": "park.feature",
+        "pk": 38,
+        "fields": {
+            "name": "accessible picnic shelters",
+            "description": "Picnic shelters connected to accessible pathways, with level entrances, and sufficient space for mobility."
+        }
+    }
+]

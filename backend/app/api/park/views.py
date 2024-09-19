@@ -3,11 +3,14 @@ import uuid
 from rest_framework import status
 from rest_framework.mixins import CreateModelMixin, ListModelMixin, RetrieveModelMixin
 from rest_framework.response import Response
+from rest_framework.views import APIView
 from rest_framework.viewsets import GenericViewSet
 
-from app.park.models import Facility, Feedback, Park, Photo
+from app.park.models import Facility, Feedback, Park, Photo, Feature
 
 from .serializers import FeedbackSerializer, ParkDetailSerializer, ParkSerializer
+
+from app.park.utils import get_feedback_features, get_query_features
 
 
 class ParkViewSet(
@@ -56,25 +59,70 @@ class FeedbackViewSet(
     queryset = Park.objects.all()
 
     def create(self, request, *args, **kwargs):
-        facility = Facility.objects.get_or_create(name=request.data.get("facility"))
-        request.data["facility"] = facility[0].id
+        park_id = request.data.get("park")
+        facility, created = Facility.objects.get_or_create(name=request.data.get("facility"), park_id=park_id)
+        # request.data["facility"] = facility.id
 
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        self.perform_create(serializer)
+        # add features
+        comments = request.data.get("comments")
+        feature_names = get_feedback_features(comments)
+        features = Feature.objects.filter(name__in=feature_names)
+        for feature in features:
+            facility.features.add(feature)
+
+        # serializer = self.get_serializer(data=request.data)
+        # serializer.is_valid(raise_exception=True)
+        # self.perform_create(serializer)
+
+        feedback = Feedback.objects.create(
+            park_id=park_id,
+            facility=facility,
+            comments=request.data.get("comments"),
+        )
 
         # Save photos and link to Feedback
         for photo in request.FILES.getlist("photos"):
             # Generate a random filename
             photo.name = f"{uuid.uuid4()}.{photo.name.split('.')[-1]}"
 
-            Photo.objects.create(feedback_id=serializer.data["id"], file=photo)
+            Photo.objects.create(feedback_id=feedback.id, file=photo)
 
         # Refetch the Feedback object
-        feedback = Feedback.objects.get(id=serializer.data["id"])
+        # feedback = Feedback.objects.get(id=serializer.data["id"])
         response_serializer = self.get_serializer(feedback)
 
         headers = self.get_success_headers(response_serializer.data)
         return Response(
             response_serializer.data, status=status.HTTP_201_CREATED, headers=headers
         )
+
+
+
+class SearchView(APIView):
+    def get(self, request):
+        query = request.query_params.get("q")
+        if not query:
+            return Response({"error": "Missing query parameter"}, status=status.HTTP_400_BAD_REQUEST)
+
+        feature_names = get_query_features(query)
+        
+        features = Feature.objects.filter(name__in=feature_names)
+        
+        if features.exists():
+            parks = Park.objects.filter(facilities__features__in=features).distinct()
+        else:
+            parks = Park.objects.none()
+
+        serialized_parks = []
+        for park in parks:
+            park_features = set(
+                park.facilities.values_list("features__name", flat=True)
+            )
+            matched_features = list(park_features.intersection(feature_names))
+            
+            park_data = ParkSerializer(park).data
+            park_data["tags"] = matched_features 
+            
+            serialized_parks.append(park_data)
+        
+        return Response(serialized_parks, status=status.HTTP_200_OK)

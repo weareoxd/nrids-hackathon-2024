@@ -18,7 +18,7 @@ class ParkAdmin(admin.ModelAdmin):
 
 @admin.register(Facility)
 class FacilityAdmin(admin.ModelAdmin):
-    list_display = ("name",)
+    list_display = ("name", "park")
     ordering = ("name",)
     search_fields = ["name"]
 
