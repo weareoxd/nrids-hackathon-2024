@@ -14,12 +14,15 @@ jobs:
   deploy:
     name: Build and deploy
     runs-on: ubuntu-latest
+    concurrency:
+      group: build-and-deploy
+      cancel-in-progress: true
 
     steps:
       - name: Send Slack notification (before build)
         run: |
           response=$(curl -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data '{
-            "channel": "${{ vars.SLACK_CHANNEL_ID }}", 
+            "channel": "${{ vars.SLACK_CHANNEL_ID }}",
             "attachments": [
               {
                 "color": "warning",
@@ -110,7 +113,7 @@ jobs:
         run: |
           curl -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data '{
             "ts": "${{ env.SLACK_TS }}",
-            "channel": "${{ vars.SLACK_CHANNEL_ID }}", 
+            "channel": "${{ vars.SLACK_CHANNEL_ID }}",
             "attachments": [
               {
                 "color": "warning",
@@ -171,7 +174,7 @@ jobs:
         run: |
           curl -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data '{
             "ts": "${{ env.SLACK_TS }}",
-            "channel": "${{ vars.SLACK_CHANNEL_ID }}", 
+            "channel": "${{ vars.SLACK_CHANNEL_ID }}",
             "attachments": [
               {
                 "color": "good",
@@ -223,7 +226,7 @@ jobs:
         run: |
           curl -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data '{
             "ts": "${{ env.SLACK_TS }}",
-            "channel": "${{ vars.SLACK_CHANNEL_ID }}", 
+            "channel": "${{ vars.SLACK_CHANNEL_ID }}",
             "attachments": [
               {
                 "color": "danger",

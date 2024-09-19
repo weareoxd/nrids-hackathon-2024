@@ -27,14 +27,17 @@ class Production(Base):
         environ_prefix=None,
     )
     AWS_STORAGE_BUCKET_NAME = Value(
-        "",
+        "nrids-hackathon-2024",
         environ_prefix=None,
     )
     AWS_S3_REGION_NAME = Value(  # noqa: F841
         "ca-central-1",
         environ_prefix=None,
     )
-    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+    AWS_S3_CUSTOM_DOMAIN = Value(
+        "nrids-hackathon-2024.s3.amazonaws.com",
+        environ_prefix=None,
+    )
 
     # For serving static files directly from S3
     AWS_S3_URL_PROTOCOL = "https"
