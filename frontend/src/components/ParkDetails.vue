@@ -38,8 +38,6 @@ const parkData = ref(null);
 watch(
   () => parkId,
   async (newParkId) => {
-    console.log("parkId changed", newParkId);
-
     if (!newParkId) {
       return;
     }

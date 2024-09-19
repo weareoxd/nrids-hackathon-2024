@@ -52,7 +52,7 @@ defineOptions({
 
 <style scoped lang="scss">
 .q-page {
-  padding: 1em 1em 5em;
+  padding: 1rem 1rem 5rem;
 
   @media screen and (min-width: $breakpoint-md-min) {
     margin: 0 auto;
