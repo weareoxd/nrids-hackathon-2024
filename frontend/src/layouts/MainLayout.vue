@@ -15,7 +15,7 @@
           </router-link>
 
           <q-btn
-            class="btn-add-comments"
+            class="btn-add-comments q-mr-sm"
             color="white"
             text-color="primary"
             label="Share your experience"
@@ -31,16 +31,12 @@
 
     <q-page-container>
       <router-view />
-      <q-page-sticky position="bottom-right" :offset="[18, 18]">
-        <Chatbot />
-      </q-page-sticky>
     </q-page-container>
   </q-layout>
 </template>
 
 <script setup>
 import { computed, onBeforeMount, ref } from "vue";
-import Chatbot from "src/components/ChatbotModal.vue";
 import AddCommentForm from "components/AddCommentForm.vue";
 
 const showAddCommentForm = ref(false);

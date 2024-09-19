@@ -1,5 +1,5 @@
 <template>
-  <q-card class="my-card">
+  <q-card class="park-card">
     <q-img
       :src="park.image || PLACEHOLDER_IMG_URL"
       :alt="park.name"
@@ -29,9 +29,4 @@ const { park } = defineProps({
 });
 </script>
 
-<style lang="sass" scoped>
-.my-card
-  width: 100%
-  max-width: 400px
-  margin: 32px 0
-</style>
+<style lang="scss" scoped></style>
