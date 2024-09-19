@@ -33,11 +33,11 @@ import PLACEHOLDER_IMG_URL from "assets/bc-parks-placeholder.png";
 const { park } = defineProps({
   park: {
     type: Object,
-    required: true
-  }
+    required: true,
+  },
 });
 
-const getImageUrl = str => {
+const getImageUrl = (str) => {
   return new URL(`../assets/icons/${str}`, import.meta.url);
 };
 </script>

@@ -6,7 +6,7 @@
 
     <h4 class="q-mt-none">Share your experience</h4>
 
-    <q-form class="q-gutter-md" @submit="onSubmit">
+    <q-form class="q-gutter-md q-mt-lg" @submit="onSubmit">
       <q-file
         v-model="filesImages"
         label="Upload up to 4 photos"
@@ -17,13 +17,23 @@
         accept=".jpg, .jpeg, .webp, image/jpeg, image/webp"
         hint="Allowed file types: jpg, webp"
         @rejected="onFileRejected"
+        @update:model-value="onFilesSelected"
       >
         <template #prepend>
           <q-icon name="attach_file" />
         </template>
       </q-file>
 
-      <!-- @TODO: show thumbnails here -->
+      <!-- show thumbnails here -->
+      <div>
+        <q-img
+          v-for="(file, index) in filePreviews"
+          :key="index"
+          :src="file"
+          class="preview-image"
+          :alt="'Preview ' + (index + 1)"
+        />
+      </div>
 
       <q-select
         v-model="parkId"
@@ -51,21 +61,23 @@
         v-model="comments"
         name="comments"
         filled
+        label="Comments"
         type="textarea"
         :rules="[(val) => val.length || 'Please tell us about your experience']"
       />
 
       <div class="form-buttons row">
         <q-btn
-          class="btn-submit col q-mr-md"
+          class="btn-submit col-12 col-sm q-mt-sm q-mr-md"
           label="Submit"
           type="submit"
           color="primary"
         />
         <q-btn
-          class="btn-cancel col-2"
+          class="btn-cancel col-12 col-sm-2 q-mt-sm"
           label="Cancel"
-          color="secondary"
+          color="white"
+          text-color="primary"
           @click="emit('cancel')"
         />
       </div>
@@ -108,7 +120,8 @@ const facilityOptions = facilities.map((facility) => ({
 
 const emit = defineEmits(["cancel"]);
 
-const filesImages = ref(null);
+const filesImages = ref([]);
+const filePreviews = ref([]);
 
 const parkId = ref(park ? park.id : null);
 const facility = ref(null);
@@ -143,6 +156,17 @@ async function onSubmit(submitEvent) {
     });
   }
 }
+
+const onFilesSelected = (files) => {
+  filePreviews.value = [];
+  for (let file of files) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      filePreviews.value.push(e.target.result);
+    };
+    reader.readAsDataURL(file);
+  }
+};
 </script>
 
 <style scoped lang="scss"></style>
