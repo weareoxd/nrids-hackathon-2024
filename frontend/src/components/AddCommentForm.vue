@@ -14,8 +14,8 @@
         multiple
         max-files="4"
         filled
-        accept=".jpg, .jpeg, .webp, image/jpeg, image/webp"
-        hint="Allowed file types: jpg, webp"
+        accept=".jpg, .jpeg, .webp, .jfif, .png, image/jpeg, image/webp, image/jfif, image/png"
+        hint="Allowed file types: jpg, webp, png"
         @rejected="onFileRejected"
         @update:model-value="onFilesSelected"
       >
@@ -124,8 +124,6 @@ const filteredParkOptions = ref(parkOptions.value);
 
 // update
 watch(parksList, () => {
-  console.log("parksList updated");
-
   filteredParkOptions.value = parkOptions.value;
 });
 
@@ -151,13 +149,10 @@ function onFileRejected(files) {
 }
 
 async function onSubmit(submitEvent) {
-  console.log("submitting form", submitEvent);
-
   const formData = new FormData(submitEvent.target);
 
   try {
     const response = await api.post("/park/feedback/", formData);
-    console.log("response", response);
 
     // close the modal
     emit("cancel");
