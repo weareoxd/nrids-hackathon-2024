@@ -43,7 +43,6 @@ class Feedback(models.Model):
         Facility, related_name="feedback_facility", on_delete=models.CASCADE
     )
 
-    facility = models.CharField(max_length=255)
     comments = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
