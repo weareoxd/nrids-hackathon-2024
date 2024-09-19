@@ -14,7 +14,7 @@ class Command(BaseCommand):
         input_dir = os.path.join(settings.BASE_DIR, "park", "fixtures")
 
         # Define the models to load
-        models = ["park.Park", "park.Facility", "park.Feedback", "park.Photo"]
+        models = ["park.Park", "park.Facility", "park.Feedback", "park.Photo", "park.Feature"]
 
         # Load data for each model
         for model in models:
