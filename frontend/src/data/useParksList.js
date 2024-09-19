@@ -3,11 +3,11 @@ import slugify from "slugify";
 import { api } from "src/boot/axios";
 import { ref } from "vue";
 
-export default function useParksList() {
-  const parksList = ref([]);
-  const isLoading = ref(false);
-  const error = ref(null);
+const parksList = ref([]);
+const isLoading = ref(false);
+const error = ref(null);
 
+export default function useParksList() {
   // Function to fetch parks from the API
   async function fetchParks() {
     // If parks data is already loaded, don't fetch again
