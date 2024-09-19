@@ -1,7 +1,5 @@
 <template>
   <q-page class="park">
-    <p>park page {{ urlSlug }} {{ parkId }}</p>
-
     <ParkDetails v-if="parkId" :park-id="parkId" />
 
     <!-- @TODO: loading indicator -->
