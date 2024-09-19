@@ -10,6 +10,7 @@ class ParkAdmin(admin.ModelAdmin):
         "url",
         "latitude",
         "longitude",
+        "image",
     )
     ordering = ("name",)
     search_fields = ["name"]

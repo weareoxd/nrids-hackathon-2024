@@ -6,7 +6,8 @@
       "name": "Cultus Lake Park",
       "url": "https://bcparks.ca/cultus-lake-park/",
       "latitude": "49.045897",
-      "longitude": "-121.977774"
+      "longitude": "-121.977774",
+      "image": "https://nrs.objectstore.gov.bc.ca/kuwyyf/cultus_lake_park_41_gal_RS_10751_afa4922e39.jpg"
     }
   },
   {
@@ -16,7 +17,8 @@
       "name": "Golden Ears Park",
       "url": "https://bcparks.ca/golden-ears-park/",
       "latitude": "49.499726",
-      "longitude": "-122.450121"
+      "longitude": "-122.450121",
+      "image": "https://nrs.objectstore.gov.bc.ca/kuwyyf/RS_2729_DSC_0257_gal_c383d32d24.JPG"
     }
   },
   {
@@ -26,7 +28,8 @@
       "name": "Goldstream Park",
       "url": "https://bcparks.ca/goldstream-park/",
       "latitude": "48.471854",
-      "longitude": "-123.555082"
+      "longitude": "-123.555082",
+      "image": "https://nrs.objectstore.gov.bc.ca/kuwyyf/goldstream_RS_1087_a24788938a.jpg"
     }
   },
   {
@@ -36,7 +39,8 @@
       "name": "Peace Arch Park",
       "url": "https://bcparks.ca/peace-arch-park/",
       "latitude": "49.004088",
-      "longitude": "-122.757699"
+      "longitude": "-122.757699",
+      "image": "https://nrs.objectstore.gov.bc.ca/kuwyyf/RS_7384_LM_30_copy_gal_a8df537061.jpg"
     }
   },
   {
@@ -46,7 +50,8 @@
       "name": "Porteau Cove Park",
       "url": "https://bcparks.ca/porteau-cove-park/",
       "latitude": "49.556322",
-      "longitude": "-123.238203"
+      "longitude": "-123.238203",
+      "image": "https://nrs.objectstore.gov.bc.ca/kuwyyf/RS_2678_Proteau_Cove_2_gal_4b3a85176d.jpg"
     }
   },
   {
@@ -56,7 +61,8 @@
       "name": "Sasquatch Park",
       "url": "https://bcparks.ca/sasquatch-park/",
       "latitude": "49.349805",
-      "longitude": "-121.723289"
+      "longitude": "-121.723289",
+      "image": "https://nrs.objectstore.gov.bc.ca/kuwyyf/RS_7756_Sasquatch_Iain_Robert_Reid_8_gal_5c957a5763.jpg"
     }
   },
   {
@@ -66,7 +72,8 @@
       "name": "Tyhee Lake Park",
       "url": "https://bcparks.ca/tyhee-lake-park/",
       "latitude": "54.706469",
-      "longitude": "-127.038423"
+      "longitude": "-127.038423",
+      "image": "https://nrs.objectstore.gov.bc.ca/kuwyyf/dbc_131246_dbc_1200_px_Tyhee_9ade1cba78.jpg"
     }
   }
 ]

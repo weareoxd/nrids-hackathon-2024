@@ -1,7 +1,7 @@
 <template>
   <q-card class="park-card">
     <q-img
-      :src="park.image || PLACEHOLDER_IMG_URL"
+      :src="park.small_image || PLACEHOLDER_IMG_URL"
       :alt="park.name"
       height="240px"
     />

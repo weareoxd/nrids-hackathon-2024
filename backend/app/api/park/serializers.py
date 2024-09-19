@@ -32,6 +32,8 @@ class ParkSerializer(serializers.ModelSerializer):
             "url",
             "latitude",
             "longitude",
+            "image",
+            "small_image"
         )
 
 
@@ -46,6 +48,8 @@ class ParkDetailSerializer(ParkSerializer):
             "url",
             "latitude",
             "longitude",
+            "image",
+            "small_image",
             "feedback",
         )
 
