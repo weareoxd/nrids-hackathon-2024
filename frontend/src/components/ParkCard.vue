@@ -17,10 +17,9 @@
 
 <script setup>
 import { defineProps } from "vue";
+import PLACEHOLDER_IMG_URL from "assets/bc-parks-placeholder.png";
 
 // @TODO: Add BC parks images to parks data
-// @TODO: Use BC Parks branded placeholder, if needed
-const PLACEHOLDER_IMG_URL = "https://via.placeholder.com/400";
 
 const { park } = defineProps({
   park: {
@@ -28,8 +27,6 @@ const { park } = defineProps({
     required: true,
   },
 });
-
-console.log("park!", park);
 </script>
 
 <style lang="sass" scoped>
