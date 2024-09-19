@@ -55,7 +55,9 @@ class Base(Configuration):
         separator=" ",
         environ_prefix=None,
     )
-    CORS_ALLOWED_ORIGIN_REGEXES = []
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        r"^http:\/\/(localhost|(127\.0\.0\.1))(:(8080|5173))?$"
+    ]
 
     # Application definition
     DJANGO_APPS = [
