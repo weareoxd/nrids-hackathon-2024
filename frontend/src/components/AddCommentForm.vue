@@ -25,7 +25,7 @@
       </q-file>
 
       <!-- show thumbnails here -->
-      <div>
+      <div class="upload-thumbs">
         <q-img
           v-for="(file, index) in filePreviews"
           :key="index"
@@ -169,4 +169,14 @@ const onFilesSelected = (files) => {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.add-comment-form {
+  max-width: 500px;
+}
+
+.upload-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 0.5rem;
+}
+</style>
