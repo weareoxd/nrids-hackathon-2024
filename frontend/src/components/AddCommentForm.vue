@@ -39,22 +39,32 @@
         v-model="parkId"
         name="park"
         filled
+        use-input
+        hide-selected
+        fill-input
+        input-debounce="0"
         label="Park location"
         emit-value
         map-options
-        :options="parkOptions"
+        :options="filteredParkOptions"
         :rules="[(val) => !!val || 'Please select a park location']"
+        @filter="filterParks"
       />
 
       <q-select
         v-model="facility"
         name="facility"
         filled
+        use-input
+        hide-selected
+        fill-input
+        input-debounce="0"
         label="Facility"
         emit-value
         map-options
-        :options="facilityOptions"
+        :options="filteredFacilityOptions"
         :rules="[(val) => !!val || 'Please select a park facility']"
+        @filter="filterFacilities"
       />
 
       <q-input
@@ -86,7 +96,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { api } from "src/boot/axios";
 import useParksList from "src/data/useParksList";
 import useFacilitiesList from "src/data/useFacilitiesList";
@@ -110,6 +120,14 @@ const parkOptions = computed(() =>
     value: park.id,
   }))
 );
+const filteredParkOptions = ref(parkOptions.value);
+
+// update
+watch(parksList, () => {
+  console.log("parksList updated");
+
+  filteredParkOptions.value = parkOptions.value;
+});
 
 const { facilities } = useFacilitiesList();
 const facilityOptions = facilities.map((facility) => ({
@@ -117,6 +135,7 @@ const facilityOptions = facilities.map((facility) => ({
   label: facility.feature_name,
   value: facility.feature_name,
 }));
+const filteredFacilityOptions = ref(facilityOptions);
 
 const emit = defineEmits(["cancel"]);
 
@@ -167,6 +186,44 @@ const onFilesSelected = (files) => {
     reader.readAsDataURL(file);
   }
 };
+
+function filterFacilities(val, update, abort) {
+  update(
+    () => {
+      const needle = val.toLowerCase();
+      filteredFacilityOptions.value = facilityOptions.filter(({ label }) => {
+        return label.toLowerCase().indexOf(needle) > -1;
+      });
+    },
+
+    // "ref" is the Vue reference to the QSelect
+    (ref) => {
+      if (val !== "" && ref.options.length > 0) {
+        ref.setOptionIndex(-1); // reset optionIndex in case there is something selected
+        ref.moveOptionSelection(1, true); // focus the first selectable option and do not update the input-value
+      }
+    }
+  );
+}
+
+function filterParks(val, update, abort) {
+  update(
+    () => {
+      const needle = val.toLowerCase();
+      filteredParkOptions.value = parkOptions.value.filter(({ label }) => {
+        return label.toLowerCase().indexOf(needle) > -1;
+      });
+    },
+
+    // "ref" is the Vue reference to the QSelect
+    (ref) => {
+      if (val !== "" && ref.options.length > 0) {
+        ref.setOptionIndex(-1); // reset optionIndex in case there is something selected
+        ref.moveOptionSelection(1, true); // focus the first selectable option and do not update the input-value
+      }
+    }
+  );
+}
 </script>
 
 <style scoped lang="scss">
