@@ -104,18 +104,18 @@ import { onBeforeMount, ref, watch } from "vue";
 import AddCommentForm from "components/AddCommentForm.vue";
 
 defineOptions({
-  name: "ParkDetails"
+  name: "ParkDetails",
 });
 
 const { parkId } = defineProps({
-  parkId: { required: true, type: Number }
+  parkId: { required: true, type: Number },
 });
 
 const parkData = ref(null);
 // Fetch park details from the API
 watch(
   () => parkId,
-  async newParkId => {
+  async (newParkId) => {
     if (!newParkId) {
       return;
     }
@@ -130,13 +130,13 @@ const showAddCommentForm = ref(false);
 
 const slide = ref(1);
 
-const toTitleCase = str => {
-  return str.replace(/\w\S*/g, txt => {
+const toTitleCase = (str) => {
+  return str.replace(/\w\S*/g, (txt) => {
     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
   });
 };
 
-const getImageUrl = str => {
+const getImageUrl = (str) => {
   return new URL(`../assets/icons/${str}`, import.meta.url);
 };
 </script>

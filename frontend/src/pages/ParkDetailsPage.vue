@@ -1,9 +1,15 @@
 <template>
   <q-page class="park">
-    <ParkDetails v-if="parkId" :park-id="parkId" />
-
-    <!-- @TODO: loading indicator -->
-    <!-- <p v-else>loading...</p> -->
+    <!-- loading indicator -->
+    <template v-if="isLoading">
+      <div class="row justify-center items-center" style="height: 100vh">
+        <q-spinner size="100px" color="secondary" />
+      </div>
+    </template>
+    <template v-else>
+      <ParkDetails v-if="parkId" :park-id="parkId" />
+      <p v-else>Park not found.</p>
+    </template>
   </q-page>
 </template>
 
