@@ -270,6 +270,12 @@ class Base(Configuration):
         ],
     }
 
+    # OpenAI API key
+    OPENAI_API_KEY = Value(  # noqa: F841
+        "",
+        environ_prefix=None,
+    )
+
     @classmethod
     def setup(cls):
         super().setup()

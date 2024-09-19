@@ -6,11 +6,10 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.viewsets import GenericViewSet
 
-from app.park.models import Facility, Feedback, Park, Photo, Feature
+from app.park.models import Facility, Feature, Feedback, Park, Photo
+from app.park.utils import get_feedback_features, get_query_features
 
 from .serializers import FeedbackSerializer, ParkDetailSerializer, ParkSerializer
-
-from app.park.utils import get_feedback_features, get_query_features
 
 
 class ParkViewSet(
@@ -60,8 +59,9 @@ class FeedbackViewSet(
 
     def create(self, request, *args, **kwargs):
         park_id = request.data.get("park")
-        facility, created = Facility.objects.get_or_create(name=request.data.get("facility"), park_id=park_id)
-        # request.data["facility"] = facility.id
+        facility, created = Facility.objects.get_or_create(
+            name=request.data.get("facility"), park_id=park_id
+        )
 
         # add features
         comments = request.data.get("comments")
@@ -69,10 +69,6 @@ class FeedbackViewSet(
         features = Feature.objects.filter(name__in=feature_names)
         for feature in features:
             facility.features.add(feature)
-
-        # serializer = self.get_serializer(data=request.data)
-        # serializer.is_valid(raise_exception=True)
-        # self.perform_create(serializer)
 
         feedback = Feedback.objects.create(
             park_id=park_id,
@@ -88,7 +84,6 @@ class FeedbackViewSet(
             Photo.objects.create(feedback_id=feedback.id, file=photo)
 
         # Refetch the Feedback object
-        # feedback = Feedback.objects.get(id=serializer.data["id"])
         response_serializer = self.get_serializer(feedback)
 
         headers = self.get_success_headers(response_serializer.data)
@@ -97,17 +92,18 @@ class FeedbackViewSet(
         )
 
 
-
 class SearchView(APIView):
     def get(self, request):
         query = request.query_params.get("q")
         if not query:
-            return Response({"error": "Missing query parameter"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {"error": "Missing query parameter"}, status=status.HTTP_400_BAD_REQUEST
+            )
 
         feature_names = get_query_features(query)
-        
+
         features = Feature.objects.filter(name__in=feature_names)
-        
+
         if features.exists():
             parks = Park.objects.filter(facilities__features__in=features).distinct()
         else:
@@ -119,10 +115,10 @@ class SearchView(APIView):
                 park.facilities.values_list("features__name", flat=True)
             )
             matched_features = list(park_features.intersection(feature_names))
-            
+
             park_data = ParkSerializer(park).data
-            park_data["tags"] = matched_features 
-            
+            park_data["tags"] = matched_features
+
             serialized_parks.append(park_data)
-        
+
         return Response(serialized_parks, status=status.HTTP_200_OK)
