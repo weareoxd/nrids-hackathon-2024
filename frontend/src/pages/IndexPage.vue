@@ -12,6 +12,7 @@
 
     <q-input
       v-model="squatchyQuery"
+      :loading="searching"
       outlined
       label="Search by feature"
       color="primary"
@@ -26,12 +27,16 @@
 
     <h2 class="text-h4">{{ visibleParksHeader }}</h2>
 
-    <div class="park-cards q-px-md">
+    <div v-if="!searching" class="park-cards q-px-md">
       <ParkCard
         v-for="park in visibleParksList"
         :key="park.name"
         :park="park"
       />
+    </div>
+
+    <div v-else class="row justify-center items-center" style="height: 200px">
+      <q-spinner size="100px" color="secondary" />
     </div>
   </q-page>
 </template>
@@ -69,12 +74,13 @@ const squatchyWelcomeText = ref(
 );
 
 const squatchyText = ref(squatchyWelcomeText);
-
 const squatchyQuery = ref("");
-
 const searchResults = ref(null);
+const searching = ref(false);
 
 async function squatchySearch() {
+  searching.value = true;
+
   squatchyText.value = "Let me get that for you!";
 
   // query for squatchyQuery
@@ -86,10 +92,17 @@ async function squatchySearch() {
 
   searchResults.value = addSlugs(response.data);
 
-  squatchyText.value = `Here are some parks that match your search. I found ${searchResults.value.length} parks`;
+  squatchyText.value = `Here are some parks that match your search. I found ${searchResults.value.length} parks:`;
+
+  if (searchResults.value.length === 0) {
+    squatchyText.value =
+      "I couldn't find any parks that match your search. Please try another phrase.";
+  }
 
   // update list of parks
   squatchyQuery.value = "";
+
+  searching.value = false;
 }
 </script>
 
