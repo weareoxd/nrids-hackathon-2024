@@ -1,62 +1,58 @@
 <template>
   <div v-if="parkData" class="park-details">
-    <h2>{{ parkData.name }}</h2>
+    <h2 class="q-mt-md q-mb-lg">{{ parkData.name }}</h2>
 
-    <div v-if="parkData?.data?.location" class="two-columns">
-      <div class="column">
-        <img src="~assets/icons/location-dot.svg" height="24" />
+    <div class="q-my-lg">
+      <div v-if="parkData?.data?.location" class="two-columns">
+        <div class="column">
+          <img src="~assets/icons/location-dot.svg" height="24" />
+        </div>
+        <div class="column">
+          {{ parkData.data.location }}
+        </div>
       </div>
-      <div class="column">
-        {{ parkData.data.location }}
+      <div v-if="parkData?.data?.status" class="two-columns">
+        <div class="column">
+          <img :src="getImageUrl(`${parkData.data.status}.svg`)" height="24" />
+        </div>
+        <div class="column">
+          {{ toTitleCase(parkData.data.status) }}
+        </div>
+      </div>
+      <div v-if="parkData?.data?.calendar" class="two-columns">
+        <div class="column">
+          <img src="~assets/icons/calendar.svg" height="24" />
+        </div>
+        <div class="column">
+          {{ parkData.data.calendar }}
+        </div>
       </div>
     </div>
-    <div v-if="parkData?.data?.status" class="two-columns">
-      <div class="column">
-        <img :src="getImageUrl(`${parkData.data.status}.svg`)" height="24" />
-      </div>
-      <div class="column">
-        {{ toTitleCase(parkData.data.status) }}
-      </div>
+
+    <div class="q-my-lg">
+      <q-carousel
+        v-model="slide"
+        animated
+        navigation
+        infinite
+        autoplay
+        arrows
+        transition-prev="slide-right"
+        transition-next="slide-left"
+        height="250px"
+        @mouseenter="autoplay = false"
+        @mouseleave="autoplay = true"
+      >
+        <q-carousel-slide
+          v-for="(value, key) in parkData.data.gallery"
+          :key="`gallery-${key}`"
+          :name="key"
+          :img-src="value"
+        />
+      </q-carousel>
     </div>
-    <div v-if="parkData?.data?.calendar" class="two-columns">
-      <div class="column">
-        <img src="~assets/icons/calendar.svg" height="24" />
-      </div>
-      <div class="column">
-        {{ parkData.data.calendar }}
-      </div>
-    </div>
 
-    <q-btn
-      v-if="parkData"
-      icon="add_a_photo"
-      color="primary"
-      label="Share your experience"
-      size="lg"
-      @click="showAddCommentForm = true"
-    />
-
-    <h4>Highlights</h4>
-
-    <q-carousel
-      v-model="slide"
-      animated
-      navigation
-      infinite
-      autoplay
-      arrows
-      transition-prev="slide-right"
-      transition-next="slide-left"
-      @mouseenter="autoplay = false"
-      @mouseleave="autoplay = true"
-    >
-      <q-carousel-slide
-        v-for="(value, key) in parkData.data.gallery"
-        :key="`gallery-${key}`"
-        :name="key"
-        :img-src="value"
-      />
-    </q-carousel>
+    <h4 class="q-my-lg">Highlights</h4>
 
     <p
       v-for="(value, key) in parkData.data.description"
@@ -65,7 +61,18 @@
       {{ value }}
     </p>
 
-    <h4>Comments</h4>
+    <h4 class="q-my-lg">Experiences</h4>
+
+    <q-btn
+      v-if="parkData"
+      icon="add_a_photo"
+      color="primary"
+      label="Share your experience"
+      size="lg"
+      class="q-mb-lg full-width-sm"
+      @click="showAddCommentForm = true"
+    />
+
     <div
       v-for="(value, key) in parkData.feedback"
       :key="`feedback-${key}`"
@@ -73,12 +80,16 @@
     >
       <p>{{ value.comments }}</p>
 
-      <img
-        v-for="(photo_value, photo_key) in value.photos"
-        :key="`feedback-${key}-photo-${photo_key}`"
-        :src="photo_value"
-        height="150"
-      />
+      <div class="q-gutter-sm row items-start">
+        <q-img
+          v-for="(photo_value, photo_key) in value.photos"
+          :key="`feedback-${key}-photo-${photo_key}`"
+          :src="photo_value"
+          style="max-width: 150px; height: 150px"
+          fit="cover"
+        >
+        </q-img>
+      </div>
     </div>
 
     <q-dialog v-model="showAddCommentForm">
@@ -117,7 +128,7 @@ watch(
 
 const showAddCommentForm = ref(false);
 
-const slide = ref("style");
+const slide = ref(1);
 
 const toTitleCase = str => {
   return str.replace(/\w\S*/g, txt => {
@@ -146,6 +157,12 @@ const getImageUrl = str => {
     &:last-child {
       flex: 1;
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .full-width-sm {
+    width: 100%;
   }
 }
 
