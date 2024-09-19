@@ -6,6 +6,10 @@
       height="240px"
     />
 
+    <div v-if="park.tags" class="tags">
+      <div v-for="tag in park.tags" :key="tag" class="tag">{{ tag }}</div>
+    </div>
+
     <q-card-section>
       <h5>{{ park.name }}</h5>
       <p>{{ park.data.location }}</p>
@@ -50,6 +54,25 @@ const getImageUrl = (str) => {
 
   &:last-child {
     margin-right: 0;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: 0.25em;
+  right: 0.25em;
+  font-size: 1.1em;
+  font-weight: bold;
+
+  .tag {
+    color: $white;
+    background: rgba($color: $black, $alpha: 60%);
+    border-radius: 2rem;
+    padding: 0.25rem 1rem;
+    margin-bottom: 0.25em;
   }
 }
 </style>

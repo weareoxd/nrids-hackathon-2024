@@ -1,6 +1,6 @@
 <template>
   <q-page class="">
-    <div class="squatchy-wrap bg-white">
+    <div class="squatchy-wrap">
       <div class="squatchy">
         <q-avatar><img src="~assets/squatchy.svg" /></q-avatar>
 
@@ -24,6 +24,8 @@
       </template>
     </q-input>
 
+    <h2 class="text-h4">{{ visibleParksHeader }}</h2>
+
     <div class="park-cards q-px-md">
       <ParkCard
         v-for="park in visibleParksList"
@@ -35,15 +37,16 @@
 </template>
 
 <script setup>
+import { api } from "src/boot/axios";
 import ParkCard from "src/components/ParkCard.vue";
 import useParksList from "src/data/useParksList";
-import { computed, ref, toValue } from "vue";
+import { computed, ref } from "vue";
 
 defineOptions({
   name: "IndexPage",
 });
 
-const { parksList } = useParksList();
+const { parksList, addSlugs } = useParksList();
 
 const visibleParksList = computed(() => {
   if (!searchResults.value) {
@@ -51,6 +54,14 @@ const visibleParksList = computed(() => {
   }
 
   return searchResults.value;
+});
+
+const visibleParksHeader = computed(() => {
+  if (!searchResults.value) {
+    return "Featured Parks";
+  }
+
+  return "Search Results";
 });
 
 const squatchyWelcomeText = ref(
@@ -63,13 +74,21 @@ const squatchyQuery = ref("");
 
 const searchResults = ref(null);
 
-function squatchySearch() {
+async function squatchySearch() {
   squatchyText.value = "Let me get that for you!";
 
-  // @TODO: Implement search functionality
+  // query for squatchyQuery
+  const response = await api.get("/park/search/", {
+    params: {
+      q: squatchyQuery.value,
+    },
+  });
 
-  // @TODO: update
+  searchResults.value = addSlugs(response.data);
 
+  squatchyText.value = `Here are some parks that match your search. I found ${searchResults.value.length} parks`;
+
+  // update list of parks
   squatchyQuery.value = "";
 }
 </script>

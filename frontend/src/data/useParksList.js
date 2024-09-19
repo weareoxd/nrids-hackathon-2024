@@ -1,7 +1,7 @@
 // useParks.js
 import slugify from "slugify";
 import { api } from "src/boot/axios";
-import { ref } from "vue";
+import { ref, toValue } from "vue";
 
 const parksList = ref([]);
 const isLoading = ref(false);
@@ -20,14 +20,7 @@ export default function useParksList() {
       const response = await api.get("/park/park/");
 
       // add url slugs to park data
-      parksList.value = response.data.map((park) => {
-        const slug = slugify(park.name, { lower: true });
-
-        return {
-          ...park,
-          slug,
-        };
-      });
+      parksList.value = addSlugs(response.data);
     } catch (err) {
       console.error(err);
       error.value = err.message;
@@ -43,5 +36,17 @@ export default function useParksList() {
     return parksList.value.find((park) => park.slug === slug);
   }
 
-  return { parksList, isLoading, error, getParkBySlug };
+  function addSlugs(parks) {
+    const parksArray = toValue(parks);
+    return parksArray.map((park) => {
+      const slug = slugify(park.name, { lower: true });
+
+      return {
+        ...park,
+        slug,
+      };
+    });
+  }
+
+  return { parksList, isLoading, error, getParkBySlug, addSlugs };
 }
