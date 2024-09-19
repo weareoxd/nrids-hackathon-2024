@@ -19,7 +19,12 @@
             color="white"
             text-color="primary"
             label="Share your experience"
+            @click="showAddCommentForm = true"
           />
+
+          <q-dialog v-model="showAddCommentForm">
+            <AddCommentForm @cancel="showAddCommentForm = false" />
+          </q-dialog>
         </div>
       </header>
     </q-header>
@@ -36,18 +41,9 @@
 <script setup>
 import { computed, onBeforeMount, ref } from "vue";
 import Chatbot from "src/components/ChatbotModal.vue";
-import useParksList from "src/data/useParksList";
+import AddCommentForm from "components/AddCommentForm.vue";
 
-const { parksList } = useParksList();
-
-const navLinks = computed(() => {
-  const links = parksList.value.map((park) => ({
-    to: { name: "park-details", params: { slug: park.slug } },
-    label: park.name,
-  }));
-
-  return links;
-});
+const showAddCommentForm = ref(false);
 
 defineOptions({
   name: "MainLayout",
