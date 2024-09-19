@@ -293,6 +293,16 @@ files = [
 python-ipware = ">=2.0.3"
 
 [[package]]
+name = "django-json-widget"
+version = "2.0.1"
+description = "Django json widget is an alternative widget that makes it easy to edit the jsonfield field of django."
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-json-widget-2.0.1.tar.gz", hash = "sha256:adb4cab17fe5a04139037d7d84725369530ef35b912c3790d3a7b13f99351358"},
+]
+
+[[package]]
 name = "django-querycount"
 version = "0.8.3"
 description = "Middleware that Prints the number of DB queries to the runserver console."
@@ -1016,4 +1026,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "bd4a17f9bdcacfbedfa581e8806d88a8ca5234e0752bc71a56b25d33197768c4"
+content-hash = "8ebca3912c05f6882236e61edfa35d7bfbcc12602068ebc5c1b526750e002272"

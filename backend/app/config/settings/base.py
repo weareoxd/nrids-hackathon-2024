@@ -72,6 +72,7 @@ class Base(Configuration):
     THIRD_PARTY_APPS = [
         "corsheaders",
         "rest_framework",
+        "django_json_widget",
     ]
     LOCAL_APPS = [
         "app.park.apps.ParkConfig",

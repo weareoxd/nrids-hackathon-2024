@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.db.models import JSONField
+from django_json_widget.widgets import JSONEditorWidget
 
 from .models import Facility, Feedback, Park, Photo
 
@@ -8,6 +10,10 @@ class ParkAdmin(admin.ModelAdmin):
     list_display = ("name",)
     ordering = ("name",)
     search_fields = ["name"]
+
+    formfield_overrides = {
+        JSONField: {"widget": JSONEditorWidget},
+    }
 
 
 @admin.register(Facility)
