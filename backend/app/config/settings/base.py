@@ -55,6 +55,7 @@ class Base(Configuration):
         separator=" ",
         environ_prefix=None,
     )
+
     CORS_ALLOW_ALL_ORIGINS = True
     # CORS_ALLOWED_ORIGIN_REGEXES = []
 
