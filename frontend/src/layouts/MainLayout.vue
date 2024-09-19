@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh lpR fFf">
+  <q-layout view="hhh lpR fff">
     <q-header bordered class="bg-primary text-white">
       <header>
         <div class="header-items q-pa-sm">
@@ -26,6 +26,16 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <q-footer bordered class="bg-primary text-white">
+      <footer>
+        <img
+          src="~assets/bcparks-wordmark.svg"
+          height="48"
+          class="q-ma-lg q-mb-xl"
+        />
+      </footer>
+    </q-footer>
   </q-layout>
 </template>
 
@@ -42,7 +52,7 @@ defineOptions({
 
 <style scoped lang="scss">
 .q-page {
-  padding: 1em;
+  padding: 1em 1em 5em;
 
   @media screen and (min-width: $breakpoint-md-min) {
     margin: 0 auto;
