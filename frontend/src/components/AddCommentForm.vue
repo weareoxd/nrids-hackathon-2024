@@ -6,7 +6,7 @@
 
     <h4 class="q-mt-none">Share your experience</h4>
 
-    <q-form class="q-gutter-md q-mt-lg" @submit="onSubmit">
+    <q-form v-if="!isLoading" class="q-gutter-md q-mt-lg" @submit="onSubmit">
       <q-file
         v-model="filesImages"
         label="Upload up to 4 photos"
@@ -92,6 +92,10 @@
         />
       </div>
     </q-form>
+
+    <div v-else class="row justify-center items-center" style="height: 300px">
+      <q-spinner size="100px" color="secondary" />
+    </div>
   </div>
 </template>
 
@@ -112,7 +116,7 @@ const { park } = defineProps({
   park: { required: false, type: [Object, null], default: null },
 });
 
-const { parksList } = useParksList();
+const { parksList, isLoading } = useParksList();
 
 const parkOptions = computed(() =>
   parksList.value.map((park) => ({
