@@ -19,6 +19,8 @@ import useParksList from "src/data/useParksList";
 import { computed, ref, watchEffect } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
+const router = useRouter();
+
 // get park id from the url slug
 // get slug param from route
 const route = useRoute();
@@ -38,7 +40,6 @@ watchEffect(() => {
     console.error("Park not found for slug", urlSlug.value);
 
     // redirect to error page
-    const router = useRouter();
     router.push({
       name: "not-found",
       params: { catchAll: "park-not-found" },

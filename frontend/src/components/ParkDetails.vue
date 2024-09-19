@@ -96,6 +96,9 @@
       <AddCommentForm :park="parkData" @cancel="showAddCommentForm = false" />
     </q-dialog>
   </div>
+  <div v-else class="row justify-center items-center" style="height: 100vh">
+    <q-spinner size="100px" color="secondary" />
+  </div>
 </template>
 
 <script setup>
