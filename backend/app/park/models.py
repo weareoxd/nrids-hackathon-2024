@@ -3,19 +3,8 @@ from django.db import models
 
 class Park(models.Model):
     name = models.TextField()
-    url = models.URLField()
-    latitude = models.DecimalField(max_digits=12, decimal_places=6)
-    longitude = models.DecimalField(max_digits=12, decimal_places=6)
-    image  = models.TextField(blank=True)
+    data = models.JSONField(blank=True, null=True)
 
-    @property
-    def small_image(self):
-        parts = self.image.rsplit('/', 1)
-        if len(parts) >= 2:
-            return parts[0] + "/small_" + parts[1]
-        else:
-            return self.image
-    
     class Meta:
         ordering = ("name",)
 

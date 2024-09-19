@@ -29,11 +29,7 @@ class ParkSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "name",
-            "url",
-            "latitude",
-            "longitude",
-            "image",
-            "small_image"
+            "data",
         )
 
 
@@ -45,11 +41,7 @@ class ParkDetailSerializer(ParkSerializer):
         fields = (
             "id",
             "name",
-            "url",
-            "latitude",
-            "longitude",
-            "image",
-            "small_image",
+            "data",
             "feedback",
         )
 

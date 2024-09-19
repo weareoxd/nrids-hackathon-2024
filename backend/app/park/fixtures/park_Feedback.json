@@ -4,7 +4,7 @@
     "pk": 467011,
     "fields": {
       "park": 467,
-      "facility": 11,
+      "facility": "11",
       "comments": "Entrance Bay Campground and Picnic Day Use area are both accessed directly from Columbia Valley Road, on opposite sides of the road, shortly after the large entrance sign and gatehouse for Cultus Lake Park. Both the campground and the picnic area have standard BC Parks signs, and yellow security gates. Both entrances include directory boards; the campground board includes a map of the campground. The board in the day use area has limited access due to concrete parking curbs.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -14,7 +14,7 @@
     "pk": 467012,
     "fields": {
       "park": 467,
-      "facility": 12,
+      "facility": "12",
       "comments": "The day use area offers ample parking in two large paved parking lots. Six parking stalls are designated as accessible, and are located in various areas of the parking lot. The surface of these stalls is level, firm and stable with no slope. Most accessible stalls have clear access to the main pathway and are close to the washrooms. Some of the accessible stalls have cross-hatched access aisles beside them.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -24,7 +24,7 @@
     "pk": 467015,
     "fields": {
       "park": 467,
-      "facility": 15,
+      "facility": "15",
       "comments": "Signage for the accessible stalls is limited to white surface markings; there is no vertical signage for these stalls.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -34,7 +34,7 @@
     "pk": 467018,
     "fields": {
       "park": 467,
-      "facility": 18,
+      "facility": "18",
       "comments": "A sign at the gatehouse just before Entrance Bay shows the availability of campsites throughout the park. This sign has good colour contrasting and large font.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -44,7 +44,7 @@
     "pk": 467021,
     "fields": {
       "park": 467,
-      "facility": 21,
+      "facility": "21",
       "comments": "Entrance Bay campground provides a compacted gravel and dirt surface on all the campground roads, including into the campsites themselves. Access routes to the washroom buildings are paved and have minimal slope. Access routes in the day use area are paved, and are wide and level. Some areas may be uneven because of root upheavals. Pathways to pit toilets are crushed gravel and may have slight slopes.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -54,7 +54,7 @@
     "pk": 467031,
     "fields": {
       "park": 467,
-      "facility": 31,
+      "facility": "31",
       "comments": "One campsite in Entrance Bay is designated as accessible. It includes a picnic table with an accessible overhanging end. The site also includes a standard fire pit.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -64,7 +64,7 @@
     "pk": 467032,
     "fields": {
       "park": 467,
-      "facility": 32,
+      "facility": "32",
       "comments": "Entrance Bay Campground offers 52 vehicle accessible campsites, all with room for multiple tents. Each site has a picnic table with no accessible overhang, and a fire pit with a cooking grid. The surface for every campsite is compacted gravel and dirt, both in the campground and on the access routes.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -74,7 +74,7 @@
     "pk": 467041,
     "fields": {
       "park": 467,
-      "facility": 41,
+      "facility": "41",
       "comments": "Many picnic tables are located in the Day Use area, between the parking lot and the beach. Most are located on firm grassy ground, which may be uneven or have some slope. Three tables have accessible overhangs, are mounted on concrete slabs and can be accessed via asphalt pathways from the parking lot. An additional table on an accessible pathway does not have an overhanging end. All tables have ample clear space around them.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -84,7 +84,7 @@
     "pk": 467042,
     "fields": {
       "park": 467,
-      "facility": 42,
+      "facility": "42",
       "comments": "Garbage and recycling receptacles are located throughout the campground and day use areas. All have the standard wildlife-proof design, and may or may not be operable by people with limited dexterity. Receptacles are located with clear level ground for front access, and sometimes also side access.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -94,7 +94,7 @@
     "pk": 467043,
     "fields": {
       "park": 467,
-      "facility": 43,
+      "facility": "43",
       "comments": "There is at least one bench overlooking the lake in the day use area. It is located in a grassy area that is firm and level. This bench has a back rest, but no arm rests.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -104,7 +104,7 @@
     "pk": 467044,
     "fields": {
       "park": 467,
-      "facility": 44,
+      "facility": "44",
       "comments": "Water stand pipes are located throughout the campground and Day Use area, mostly on firm and level ground, along accessible pathways. Some taps require dexterity and grip to operate.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -114,7 +114,7 @@
     "pk": 467051,
     "fields": {
       "park": 467,
-      "facility": 51,
+      "facility": "51",
       "comments": "The five pit toilets in this part of the park are located along pathways that are hard packed gravel with minimal slope. Concrete pads at the doors may create slight thresholds. Doors are wide, and open outwards. Interior dimensions are approximately 1.5 x 1.5 m. Horizontal grab bars are installed behind the toilet and on the inside of the door. Toilet paper dispenser is closed-roll style and mounted high on the side wall.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -124,7 +124,7 @@
     "pk": 467052,
     "fields": {
       "park": 467,
-      "facility": 52,
+      "facility": "52",
       "comments": "This park has two washroom buildings in the campground and two in the Day Use area. Washroom buildings on the campground do not have designated accessible stalls, while those in the Day Use area do. Signage does not indicate which buildings have accessibility features. Accessible stalls include grab bars behind and beside the toilet, and adequate clear space for transferring. Toilet paper dispensers are closed-roll style, and are mounted forward of the side grab bar.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -134,7 +134,7 @@
     "pk": 467053,
     "fields": {
       "park": 467,
-      "facility": 53,
+      "facility": "53",
       "comments": "Neither the shower buildings in the campground nor the change rooms in the Day Use area have designated accessible stalls that would accommodate people using wheeled mobility aids.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -144,7 +144,7 @@
     "pk": 467061,
     "fields": {
       "park": 467,
-      "facility": 61,
+      "facility": "61",
       "comments": "This campground and day-use area have signs that are conveniently located at the main entrance areas. The signs are clean, easy to read, and they provide all the information you need on the park and surrounding area.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -154,7 +154,7 @@
     "pk": 467082,
     "fields": {
       "park": 467,
-      "facility": 82,
+      "facility": "82",
       "comments": "The Day Use area offers two docks that have both fixed and floating sections which offer amazing views of the lake. Both docks are close to picnic tables, benches, and washroom buildings. The approach to these docks is soft pebbly-sand. The transition between the fixed and floating section of the docks has a slope that is well in excess of 8%. There is no seating or shelter at these docks, but picnic tables are nearby.",
       "created_at": "2020-08-06T20:58:58Z"
     }
@@ -164,7 +164,7 @@
     "pk": 514011,
     "fields": {
       "park": 514,
-      "facility": 11,
+      "facility": "11",
       "comments": "The campground at Goldstream is located in the far southwest of the park, accessed via Golden Gate Road. The entrance to the park includes a standard BC Parks sign and a high visibility yellow security gate. The gate house is located at the entrance to the campground and is staffed according to the seasons. The gate house provides access to the ice machine and basic convenience store services. The entrance doorway is narrow and has a low threshold. The directory board includes maps of the park and the general area, as well as hiking information. There is a payphone beside the directory board; this phone may be difficult to operate for people with limited dexterity, or those in a seated position.",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -174,7 +174,7 @@
     "pk": 514018,
     "fields": {
       "park": 514,
-      "facility": 18,
+      "facility": "18",
       "comments": "While the route from the Malahat Highway to the campground is not straightforward, there is clear signage along the way at all decision points.",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -184,7 +184,7 @@
     "pk": 514021,
     "fields": {
       "park": 514,
-      "facility": 21,
+      "facility": "21",
       "comments": "The access routes through the campground are generally wide, firm and stable with minimum slope. All roads connecting campers to washrooms and service areas are paved and level. All paths are level and firm with a surface of compressed, crushed gravel.",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -194,7 +194,7 @@
     "pk": 514023,
     "fields": {
       "park": 514,
-      "facility": 23,
+      "facility": "23",
       "comments": "Three campsites have newly built stairs to access the site. These stairs are firm and stable, and have consistent rise and run, but do not have handrails.",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -204,7 +204,7 @@
     "pk": 514031,
     "fields": {
       "park": 514,
-      "facility": 31,
+      "facility": "31",
       "comments": "There are seven accessible campsites in Goldstream campground, located close to the shower buildings on the inner loop of the campground, and close to the kids&rsquo; play area and amphitheater. Each campsite has a firm, level surface with an accessible picnic table. Rather than having overhanging ends, some of the tables have a section of the side bench removed. Standard fire pits are present. The tenting area is level with the ground. The accessible campsites are 100, 101, 102, 103, 117, 118, and 140.",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -214,7 +214,7 @@
     "pk": 514032,
     "fields": {
       "park": 514,
-      "facility": 32,
+      "facility": "32",
       "comments": "The regular campsites are well designed with a level, firm surface. Each one has a picnic table and fire pit. Some have raised tent pads. A small number of walk-in campsites are located near Shower Building 1. The access path is firm and level. Several of these sites have raised tent pads. Three campsites have a flight of stairs at the entrance. The stairs are new and are firm and stable, with consistent rise and run, but no handrails.",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -224,7 +224,7 @@
     "pk": 514042,
     "fields": {
       "park": 514,
-      "facility": 42,
+      "facility": "42",
       "comments": "Garbage and recycling receptacles are located in service areas throughout the campground, as well as near the dishwashing sinks. All have ample clear ground space for access from the front and sides. Operating mechanisms are standard wildlife-proof design that may be difficult for people with limited dexterity to use.",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -234,7 +234,7 @@
     "pk": 514044,
     "fields": {
       "park": 514,
-      "facility": 44,
+      "facility": "44",
       "comments": "Water standpipes are located throughout the park, generally on clear and level ground, mounted on a concrete pad.",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -244,7 +244,7 @@
     "pk": 514051,
     "fields": {
       "park": 514,
-      "facility": 51,
+      "facility": "51",
       "comments": "All pit toilets in this campground are located along accessible pathways, generally along with other amenities. Clear signage on the door indicates that they include accessibility features. Door clearance is wide, and there is clear, level ground in front of the door. Interior dimensions are approximately 1.6 x 1.6 m. Grab bars are installed behind and beside the toilet, as well as on the inside of the door. Door locking mechanism is slide lock, which can be operated with a closed fist. Toilet paper dispensers are closed-roll style, and are mounted forward of the side grab bar.",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -254,7 +254,7 @@
     "pk": 514052,
     "fields": {
       "park": 514,
-      "facility": 52,
+      "facility": "52",
       "comments": "There are a number of washroom/shower buildings buildings in this campground. Both sides include standard-sized shower and toilet stalls. Washrooms are well lit, and include a sink and counter area with clear knee space below. Soap dispensers are push-activated, and are mounted on the wall behind the sinks. An automatic hand dryer is on the side wall at one end of the counter. All toilet buildings include a baby change table. Each building also includes separate universal washroom/shower rooms that can only be accessed using a code obtained from the gate house. The toilet and shower areas are separated by a partial wall; the toilet area is at least 1.5 x 1.5 m, and includes rear and side grab bars. The toilet paper dispenser is closed-roll style, mounted above the side grab bar.",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -264,7 +264,7 @@
     "pk": 514053,
     "fields": {
       "park": 514,
-      "facility": 53,
+      "facility": "53",
       "comments": "Each shower building includes several standard-sized shower stalls in both sides, but also has a separate universal design toilet and shower room; access to this room requires a code available from the gate house. Shower and toilet areas within these rooms are separated by a wall. The shower is level entry, and includes fold-down seating, a side grab bar with a 90-degree angle, a shower head that is adjustable in height and can be handheld.",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -274,7 +274,7 @@
     "pk": 514061,
     "fields": {
       "park": 514,
-      "facility": 61,
+      "facility": "61",
       "comments": "Directional signs within the park have good colour contrasting and use both text and symbols. Font is somewhat small to be read from a vehicle.",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -284,7 +284,7 @@
     "pk": 514074,
     "fields": {
       "park": 514,
-      "facility": 74,
+      "facility": "74",
       "comments": "The amphitheatre is located at the center of the campground, near the playground and bike course. The surface of the amphitheater is level and firm. The seating has wide aisles, but benches do not have back support or arm rests.",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -294,7 +294,7 @@
     "pk": 514091,
     "fields": {
       "park": 514,
-      "facility": 91,
+      "facility": "91",
       "comments": "The Upper Goldstream hiking trail is steep in places with rocky inclines and a path that is broken and uneven. The signage relating to the trails is posted high and may be difficult to read. There are no accessible trails that transect or commence from the Goldstream Campground .",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -304,7 +304,7 @@
     "pk": 514101,
     "fields": {
       "park": 514,
-      "facility": 101,
+      "facility": "101",
       "comments": "A dishwashing and food prep station is available at the shower buildings. The sink and counters do not have clear knee space under them; taps have levered handles.",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -314,7 +314,7 @@
     "pk": 514102,
     "fields": {
       "park": 514,
-      "facility": 102,
+      "facility": "102",
       "comments": "A playground and bike trail are located in the center of the campground. The bike trail is suitable for novice to expert riders. There is clear signage related to the bike track. The playground is large and includes a variety of equipment, most of which requires climbing. The outer edge of the playground has a threshold, sometimes up to 200 mm high. Surface under the play equipment is soft natural materials. There are picnic tables and benches on crushed gravel pathways around the playground. One of the tables has a cut-out section to allow access for a wheeled mobility device.",
       "created_at": "2020-06-25T16:22:22Z"
     }
@@ -324,7 +324,7 @@
     "pk": 637011,
     "fields": {
       "park": 637,
-      "facility": 11,
+      "facility": "11",
       "comments": "Peace Arch Park is accessed from Highway 99 near the Canada-US border. The directory board has ample clear and level space around it, and includes maps of the park and of the general area.",
       "created_at": "2020-08-06T21:03:11Z"
     }
@@ -334,7 +334,7 @@
     "pk": 637012,
     "fields": {
       "park": 637,
-      "facility": 12,
+      "facility": "12",
       "comments": "The parking lot for Peace Arch Park is located behind the duty free shop, off of Beach Avenue. Of the more than 150 parking stalls, none are designated as accessible.",
       "created_at": "2020-08-06T21:03:11Z"
     }
@@ -344,7 +344,7 @@
     "pk": 637021,
     "fields": {
       "park": 637,
-      "facility": 21,
+      "facility": "21",
       "comments": "The main access route connects the parking lot to the other main areas of the park which include the washrooms, Heritage Hall, the viewpoint, picnic area, and the Peace Arch. The route itself is fully paved, has adequate width and minimal slope, and is generally in good repair.",
       "created_at": "2020-08-06T21:03:11Z"
     }
@@ -354,7 +354,7 @@
     "pk": 637041,
     "fields": {
       "park": 637,
-      "facility": 41,
+      "facility": "41",
       "comments": "Peace Arch offers over 30 picnic tables spread out in different areas of the park. About half are in a large grassy field connected to the parking lot, requiring travel over the grass to reach them. None of these tables have accessible overhanging ends. The tables near the washroom building are on a flat and level concrete surface. One table in this area has an accessible overhang, as well as a section of the bench cut out for wheelchair access.",
       "created_at": "2020-08-06T21:03:11Z"
     }
@@ -364,7 +364,7 @@
     "pk": 637042,
     "fields": {
       "park": 637,
-      "facility": 42,
+      "facility": "42",
       "comments": "Garbage cans and recycling receptacles are conveniently located throughout the park, found at the major access routes and picnic areas. Some bins are large garbage can-style and are not securely fastened to the ground, particularly the ones by the washroom building.",
       "created_at": "2020-08-06T21:03:11Z"
     }
@@ -374,7 +374,7 @@
     "pk": 637043,
     "fields": {
       "park": 637,
-      "facility": 43,
+      "facility": "43",
       "comments": "Benches are scattered around the viewing areas of the park. All of these benches are on firm and level ground, have a back rest and at least one arm rest, and are secured to the ground.",
       "created_at": "2020-08-06T21:03:11Z"
     }
@@ -384,7 +384,7 @@
     "pk": 637045,
     "fields": {
       "park": 637,
-      "facility": 45,
+      "facility": "45",
       "comments": "There are two water fountains in the picnic areas, located in a grassy field away from an accessible pathway. They are built of stone, and require a step up onto the stone platform to access the fountain.",
       "created_at": "2020-08-06T21:03:11Z"
     }
@@ -394,7 +394,7 @@
     "pk": 637052,
     "fields": {
       "park": 637,
-      "facility": 52,
+      "facility": "52",
       "comments": "Peace Arch Park has one washroom building, located in the middle of the picnic areas, and off the main access route to the Peace Arch. This building offers an accessible toilet stall, with a wide outward swinging door and ample clear space beside the toilet. Horizontal grab bars are mounted beside and behind the toilet. The toilet paper dispenser is closed-roll style, mounted forward of the side grab bar. The sink area includes three sinks, minimal counter space, and no knee clearance under the counter. Taps require grip and dexterity to operate. Soap dispensers are push-activated, and are mounted quite high above the sinks. A hand dryer is also push-activated, and is mounted just to the left of the sinks, with clear space in front of it. This building also includes a baby change table.",
       "created_at": "2020-08-06T21:03:11Z"
     }
@@ -404,7 +404,7 @@
     "pk": 637071,
     "fields": {
       "park": 637,
-      "facility": 71,
+      "facility": "71",
       "comments": "The Heritage Hall is available to rent for events. The area around the building is paved and level, with doorways that have a width of 915 mm. Both the main area and kitchen are spacious and level, with concrete flooring in the whole building. A fridge and full kitchen are offered. There is also an exterior picnic area outside the Heritage Hall, which includes 19 tables, 2 large charcoal grills, a food prep station and full sink area. A big overhang provides protection while cooking your food.",
       "created_at": "2020-08-06T21:03:11Z"
     }
@@ -414,7 +414,7 @@
     "pk": 637081,
     "fields": {
       "park": 637,
-      "facility": 81,
+      "facility": "81",
       "comments": "There are two main viewing areas, both of which offer a south-facing view of the Peace Arch. These viewpoints are split up into two sections; one is near the Heritage Hall building, and the other is on the east side of the highway, off of Peace Arch Drive. There are ten benches altogether in these two locations. The benches are located on firm and level concrete slabs, but are not connected to accessible pathways.",
       "created_at": "2020-08-06T21:03:11Z"
     }
@@ -424,7 +424,7 @@
     "pk": 646018,
     "fields": {
       "park": 646,
-      "facility": 18,
+      "facility": "18",
       "comments": "BC Parks signage identifies park entrance. The park information kiosk provides information on the history of the park as well as park map and trail information.",
       "created_at": "2021-05-28T21:09:15Z"
     }
@@ -434,7 +434,7 @@
     "pk": 646021,
     "fields": {
       "park": 646,
-      "facility": 21,
+      "facility": "21",
       "comments": "Access from road to gate house is paved asphalt with painted center line distinguishing the two lanes. Access loop through camp ground to walk-in camp area is a well maintained asphalt surface. Routes are wide enough for two vehicles to pass one another with ease. Access routes are smooth with gradual slopes. Washrooms are located along access routes, with flat well maintained pathways leading to the washroom facilities. Access route to washroom facility from east side is very narrow, has severe side slope and may be difficult to use by person using mobility aid. One of the rent-able Legacy Cabins has a gentle ramp to the front of the cabin; however there is a small threshold at the front door that may pose difficulty for persons using mobility aids to access. There is no accessible route down to the beach in the viewing area. The route is steep at points and often obstructed with depressions, rocks and trees.",
       "created_at": "2021-05-28T21:09:15Z"
     }
@@ -444,7 +444,7 @@
     "pk": 646031,
     "fields": {
       "park": 646,
-      "facility": 31,
+      "facility": "31",
       "comments": "Two rent-able Legacy Cabins are available on site. The cabin interior has limited clear space and persons using mobility aids may have difficulty accessing features within the cabins. The legacy cabins are former Olympic village cabins moved to Porteau Cove Park and available for rent through the park. The interior of the cabin is cozy and the main room provides enough space for turning. The bottom bedroom is accessible and has just enough room for transfer. Only one cabin is wheelchair accessible via an access ramp.",
       "created_at": "2021-05-28T21:09:15Z"
     }
@@ -454,7 +454,7 @@
     "pk": 646032,
     "fields": {
       "park": 646,
-      "facility": 32,
+      "facility": "32",
       "comments": "Campsite surfaces are packed gravel and well maintained. Picnic tables are fixed to concrete pads. Campsites do not include tent pads, but the sites are very level, with minimal cross slope. Most campsites are large enough to park a small RV. There are no designated accessible campsites, however most campsites can support a van equipped with a ramp, and are near the washroom facility. Garbage facilities and water standpipes are located throughout the campsite.",
       "created_at": "2021-05-28T21:09:15Z"
     }
@@ -464,7 +464,7 @@
     "pk": 646041,
     "fields": {
       "park": 646,
-      "facility": 41,
+      "facility": "41",
       "comments": "Picnic tables in campsites do not include a large overhang to accommodate persons using mobility aids. Some of the picnic tables in the viewing area are fully accessible and are all located adjacent parking and close to the pier. The surface area around each table is compressed gravel that provides adequate firmness for any mobility device or stroller.",
       "created_at": "2021-05-28T21:09:15Z"
     }
@@ -474,7 +474,7 @@
     "pk": 646042,
     "fields": {
       "park": 646,
-      "facility": 42,
+      "facility": "42",
       "comments": "Garbage receptacles are located next to the access route, fastened to the ground, and cane detectable. They are not colour-contrasted with the surroundings, and they have wildlife-proof latches that may be difficult to open.",
       "created_at": "2021-05-28T21:09:15Z"
     }
@@ -484,7 +484,7 @@
     "pk": 646043,
     "fields": {
       "park": 646,
-      "facility": 43,
+      "facility": "43",
       "comments": "The seating on the pier is located for easy access there are no arm rests. The seating offers firm back support and good seat height.",
       "created_at": "2021-05-28T21:09:15Z"
     }
@@ -494,7 +494,7 @@
     "pk": 646044,
     "fields": {
       "park": 646,
-      "facility": 44,
+      "facility": "44",
       "comments": "There are two water stand pipes and one water fountain at the site. There is a smooth and even surface around the stand pipes, but the tap control is not lever-type and may be difficult to operate. Drain grates at water standpipes may have openings around 13mm.",
       "created_at": "2021-05-28T21:09:15Z"
     }
@@ -504,7 +504,7 @@
     "pk": 646051,
     "fields": {
       "park": 646,
-      "facility": 51,
+      "facility": "51",
       "comments": "A pit toilet is located adjacent to the toilet facility. Some accessible features can be found in the toilet facility including: rear and side grab bars, a large entry door and a grab bar mounted on the entry door. The toilet paper dispenser is mounted above grab bar.",
       "created_at": "2021-05-28T21:09:15Z"
     }
@@ -514,7 +514,7 @@
     "pk": 646052,
     "fields": {
       "park": 646,
-      "facility": 52,
+      "facility": "52",
       "comments": "The washroom facility is located at the center of the campsite loop within a reasonable distance to all campsites. The entrance area has limited clear space and may be difficult for persons using mobility devices to access. No automatic door opener is installed on the washroom door. The washroom door requires significant effort to open, due to the door closing device. The washroom counter includes appropriate knee space and counter height. Faucet control is operable with a closed fist. Hand soap is mounted on wall behind sink and may be difficult to reach from a seated position. Two heights of urinals are available in male washroom, but are not equipped with mobility grab bars. Toilet grab bar on side wall does not extend beside the side of toilet. Toilet paper holder is mounted above grab bar and may be difficult to reach from the seated position. Toilet flush mechanism is located on the non-transfer side of the toilet and may be difficult to reach from the seated position. Doors to accessible washroom stalls don&rsquo;t have d-ring style handles. Many washroom coat hooks are mounted high on washroom walls and may not be accessible from a seated position.",
       "created_at": "2021-05-28T21:09:15Z"
     }
@@ -524,7 +524,7 @@
     "pk": 646053,
     "fields": {
       "park": 646,
-      "facility": 53,
+      "facility": "53",
       "comments": "Washroom shower stalls include seating and two grab bars. The shower control is operable with a closed fist but is not operable while seated on shower bench. Shower head is mounted high and is not adjustable from seated position. The shower bench creates a pinch point at the shower wall, which may prevent persons using mobility aids from entering accessible shower. The shower stall clothing hooks are mounted high on shower walls and are not within reach while in seated position.",
       "created_at": "2021-05-28T21:09:15Z"
     }
@@ -534,7 +534,7 @@
     "pk": 646061,
     "fields": {
       "park": 646,
-      "facility": 61,
+      "facility": "61",
       "comments": "A park information board is located at the entrance to the public use area along access route to the campsite gate. Maps and informational signage on the board. Campsite signage indicating pricing and hours are located at the gate. Campsite numbering and directional signage are located along vehicular access route. Signage is consistent and understandable. Symbols are utilized where possible. Washroom signage is mounted on the washroom structure but may not obviously visible from the vehicular route.",
       "created_at": "2021-05-28T21:09:15Z"
     }
@@ -544,7 +544,7 @@
     "pk": 646081,
     "fields": {
       "park": 646,
-      "facility": 81,
+      "facility": "81",
       "comments": "The pier is fully accessible and has numerous seating areas and viewing areas offering an excellent view of the cove. The viewing platforms are only accessed via stairs.",
       "created_at": "2021-05-28T21:09:15Z"
     }
@@ -554,7 +554,7 @@
     "pk": 679011,
     "fields": {
       "park": 679,
-      "facility": 11,
+      "facility": "11",
       "comments": "Green Point Day Use Area is located within Sasquatch Park, with clear signage through Harrison Hot Springs, and accessed via Rockwell Road. A directory board at the entrance includes information about the park and the general area.",
       "created_at": "2021-05-28T23:18:29Z"
     }
@@ -564,7 +564,7 @@
     "pk": 679012,
     "fields": {
       "park": 679,
-      "facility": 12,
+      "facility": "12",
       "comments": "The parking lot at this Day Use area is paved with a flat surface throughout. Some stalls can accommodate extra large vehicles such as vans, trucks, or buses. Of the more than 200 parking stalls, four are designated as accessible. These four stalls have blue painted surface sigange, but no vertical signage. Stalls are somewhat wider than regular stalls, but do not have access aisles.",
       "created_at": "2021-05-28T23:18:29Z"
     }
@@ -574,7 +574,7 @@
     "pk": 679021,
     "fields": {
       "park": 679,
-      "facility": 21,
+      "facility": "21",
       "comments": "Most of the main access routes are paved asphalt with minimal slope. The pathways to the washroom building, however, have greater slopes and some areas of root upheavals.",
       "created_at": "2021-05-28T23:18:29Z"
     }
@@ -584,7 +584,7 @@
     "pk": 679041,
     "fields": {
       "park": 679,
-      "facility": 41,
+      "facility": "41",
       "comments": "The main picnic area closest to the parking lot offers 27 tables on flat and level ground, located along an accessible pathway, with ample clear space around each one. None of these tables have accessible overhangs. More tables of a similar style are located further down the path on the other side of the day use area, near the pit toilet.",
       "created_at": "2021-05-28T23:18:29Z"
     }
@@ -594,7 +594,7 @@
     "pk": 679042,
     "fields": {
       "park": 679,
-      "facility": 42,
+      "facility": "42",
       "comments": "Garbage and recycling receptacles are conveniently spaced out around the Day Use area. While the majority are on a flat level surface and easy to access, some may be on uneven grassy ground. All are standard wildlife-proof design.",
       "created_at": "2021-05-28T23:18:29Z"
     }
@@ -604,7 +604,7 @@
     "pk": 679044,
     "fields": {
       "park": 679,
-      "facility": 44,
+      "facility": "44",
       "comments": "Green Point offers plenty of water standpipes which are conveniently spaced out around the grounds. The vast majority are on a flat level surface and easy to access.",
       "created_at": "2021-05-28T23:18:29Z"
     }
@@ -614,7 +614,7 @@
     "pk": 679051,
     "fields": {
       "park": 679,
-      "facility": 51,
+      "facility": "51",
       "comments": "Green Point offers two pit toilets located on hard packed gravel pathways which may have some slope. Doors are wide and open out, and interior dimensions are approximately 1.5 x 1.5 m. One has a side grab bar installed on the far side from the toilet, and no rear grab bar. The toilet paper dispenser is closed-roll style.",
       "created_at": "2021-05-28T23:18:29Z"
     }
@@ -624,7 +624,7 @@
     "pk": 679061,
     "fields": {
       "park": 679,
-      "facility": 61,
+      "facility": "61",
       "comments": "Clear signs at the turn-off to the Day Use area use both words and symbols, and have good colour contrasting.",
       "created_at": "2021-05-28T23:18:29Z"
     }
@@ -634,7 +634,7 @@
     "pk": 679081,
     "fields": {
       "park": 679,
-      "facility": 81,
+      "facility": "81",
       "comments": "This Day Use area offers fantastic views of Harrison Lake. While there is not one designated viewing area, there are plenty of areas to get a good view while at a picnic table. The areas that do provide the best views are of a flat and level surface, with easy access for those using a mobility device.",
       "created_at": "2021-05-28T23:18:29Z"
     }
@@ -644,7 +644,7 @@
     "pk": 679082,
     "fields": {
       "park": 679,
-      "facility": 82,
+      "facility": "82",
       "comments": "There is a boat launch at Green Point. High visibility yellow parking curbs delineate the entrance to the boat launch.",
       "created_at": "2021-05-28T23:18:29Z"
     }
@@ -654,7 +654,7 @@
     "pk": 744011,
     "fields": {
       "park": 744,
-      "facility": 11,
+      "facility": "11",
       "comments": "This park is accessed from Highway 16 via Telkwa High Road and Tyhee Road, with clear signage for the turnoff on Highway 16. The entrance sign for the park has large font, but colour contrasting is fading. This park has a bright yellow security gate with a yellow and black reflective closed sign.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -664,7 +664,7 @@
     "pk": 744012,
     "fields": {
       "park": 744,
-      "facility": 12,
+      "facility": "12",
       "comments": "There are four accessible stalls at the Davis parking area. They have both vertical and horizontal markings. There are two sets of two accessible stalls, with 5 m x 5. 8 m cross hatching between the stalls in both sets.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -674,7 +674,7 @@
     "pk": 744013,
     "fields": {
       "park": 744,
-      "facility": 13,
+      "facility": "13",
       "comments": "Accessible parking stalls are 3.4 m wide and 5.8 m long.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -684,7 +684,7 @@
     "pk": 744014,
     "fields": {
       "park": 744,
-      "facility": 14,
+      "facility": "14",
       "comments": "Accessible stall surface is level, stable, firm and slip resistant. It is concrete and has minimal to no cross slope. The surface is in good repair with minimal cracking.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -694,7 +694,7 @@
     "pk": 744015,
     "fields": {
       "park": 744,
-      "facility": 15,
+      "facility": "15",
       "comments": "Vertical signs clearly identify the accessible stalls. Surface paint signage is worn in all stalls and may be hard to read.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -704,7 +704,7 @@
     "pk": 744016,
     "fields": {
       "park": 744,
-      "facility": 16,
+      "facility": "16",
       "comments": "Cross-hatching between designated stalls provides safe and direct access to pedestrian pathways.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -714,7 +714,7 @@
     "pk": 744018,
     "fields": {
       "park": 744,
-      "facility": 18,
+      "facility": "18",
       "comments": "Entrance signage includes a directory board with a map of the park and general information. There are also signs pointing out the location of numbered campsites.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -724,7 +724,7 @@
     "pk": 744021,
     "fields": {
       "park": 744,
-      "facility": 21,
+      "facility": "21",
       "comments": "Exterior pathways between all main features of the park are generally wider than 1.2 m and have surfaces that are level, stable, firm and slip resistant with minimal slope.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -734,7 +734,7 @@
     "pk": 744023,
     "fields": {
       "park": 744,
-      "facility": 23,
+      "facility": "23",
       "comments": "There is a set of concrete stairs between the parking lot and the day use beach; alternate accessible pathways exist. Steps are uniform in rise and run, but there are no tactile or colour contrast indicators on the nosings of the steps, nor at the top of the stairs. Grippable handrails are provided, but they do not extend horizontally beyond the top step, and they end at the bottom step rather than on level ground.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -744,7 +744,7 @@
     "pk": 744032,
     "fields": {
       "park": 744,
-      "facility": 32,
+      "facility": "32",
       "comments": "The standard campsites at this park have large surface areas with diameters of 8 to 12 m, firmly packed gravel surfaces, and are mostly level, but with a slope of far greater than 1 to 12 from the parking spaces. All sites have standard picnic tables with the exception of site 15 which has a table with an accessible overhanging end. There are four tenting only sites, one of which has a table with an accessible overhanging end. Sites also have fire pits with cooking grates at the back. Campsite numbers are mounted on low wooden posts at the entrance to the site. Numbers have large font and are colour contrasted with the background.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -754,7 +754,7 @@
     "pk": 744041,
     "fields": {
       "park": 744,
-      "facility": 41,
+      "facility": "41",
       "comments": "A number of picnic tables are located in a grassy area between the picnic shelter and the lake. They are not connected to an accessible pathway, but can be reached across level and firm grass. There is ample clear space around each table. None of these tables have accessible overhanging ends.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -764,7 +764,7 @@
     "pk": 744042,
     "fields": {
       "park": 744,
-      "facility": 42,
+      "facility": "42",
       "comments": "Garbage and recycling receptacles are located at various areas throughout the park. All are the standard BC Parks wildlife-proof design, and have clear ground space to the front and side.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -774,7 +774,7 @@
     "pk": 744043,
     "fields": {
       "park": 744,
-      "facility": 43,
+      "facility": "43",
       "comments": "The benches placed around the fire pit have no armrests or backrests.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -784,7 +784,7 @@
     "pk": 744044,
     "fields": {
       "park": 744,
-      "facility": 44,
+      "facility": "44",
       "comments": "There are a number of water stand pipes in this park. Spout heights range from 750 to 930 mm. Operating mechanisms are accessible hand levers.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -794,7 +794,7 @@
     "pk": 744046,
     "fields": {
       "park": 744,
-      "facility": 46,
+      "facility": "46",
       "comments": "An outdoor rinsing shower is provided at the day use area above the beach. It has three heights of shower - one for feet, one at a medium height, and one at the top of the shower stand. Controls are pushbutton style, with heights ranging from 860 mm to 1 m. These controls require significant manual force and dexterity to operate.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -804,7 +804,7 @@
     "pk": 744051,
     "fields": {
       "park": 744,
-      "facility": 51,
+      "facility": "51",
       "comments": "Non-accessible pit toilets in the campground and at the day use area have interior dimensions of 1.3 x 1.3 m. The non-accessible toilets at the boat launch are 1.1 x 1.4 m. Door clearance for these toilets ranges from 560 mm to 620 mm.&#279;One set of designated accessible pit toilets are located at near the group camp. They have interior dimensions of 1.5 x 1.5 m and door clearance of 880 mm. Grab bars heights range from 840 mm to 895 mm. Accessible pit toilets have multiple coats hooks hung at 1.3 and 1.7 m. Toilet height in these pit toilets range from 385 mm to 600 mm.&#279;",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -814,7 +814,7 @@
     "pk": 744052,
     "fields": {
       "park": 744,
-      "facility": 52,
+      "facility": "52",
       "comments": "An accessible shower room is provided adjacent to site 15 at the campground. The entry door has a level threshold, a lever handle and door clearance of 870 mm. The change area and shower area are separated by a moveable shower curtain with not threshold between the two. There is adequate turning clearance in this area. The changing area has a shelf for personal items install at 1.3 m and three large clothing hooks installed at the same height. There is a pull-down bench with seat height of 490 mm with a grab bar on the side wall mounted at 810 mm. The shower area also has a pull-down seat and grab bars similar in height to those in the change area. The shower controls are difficult to operate, requiring significant force to use, and with the water turning off quite quickly. A handheld or moveable height showerhead is not provided.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -824,7 +824,7 @@
     "pk": 744053,
     "fields": {
       "park": 744,
-      "facility": 53,
+      "facility": "53",
       "comments": "A change house is located at the day use area. Signage on the doors uses universally recognizable symbols in high colour contrast, as well as Braille. The change rooms are connected to an accessible pathway and have level entry. The exterior doors have lever handles. In each change room there is a single sink with knee clearance beneath the counter. An automatic hand dryer is installed on the opposite wall from the sink. Seating is provided at a height of 510 mm. There are no grab bars in the changing area. A child change table is provided in the changing area. The men&rsquo;s side has one accessible toilet stall with a separate urinal, while the women&rsquo;s side has one accessible and one standard toilet stall. Interior dimensions of the accessible stalls are 1.5 x 1.5 m. Doors have interior D-handles and sliding lock mechanisms. Grab bars are installed behind and beside the toilet.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -834,7 +834,7 @@
     "pk": 744061,
     "fields": {
       "park": 744,
-      "facility": 61,
+      "facility": "61",
       "comments": "Directional signage point the way to numbered campsites.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -844,7 +844,7 @@
     "pk": 744063,
     "fields": {
       "park": 744,
-      "facility": 63,
+      "facility": "63",
       "comments": "Amenity signs show the location of water stand pipes and shower rooms.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -854,7 +854,7 @@
     "pk": 744071,
     "fields": {
       "park": 744,
-      "facility": 71,
+      "facility": "71",
       "comments": "The day use area has a 7m x 10 m picnic shelter which is connected to an accessible pathway. The floor is smooth finished concrete which is level with the connecting pathway. The picnic shelter has no kitchen facilities such as sink or counter, but there is a wood stove which could be used for cooking.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -864,7 +864,7 @@
     "pk": 744072,
     "fields": {
       "park": 744,
-      "facility": 72,
+      "facility": "72",
       "comments": "The floor surface of the picnic shelter is finished concrete which is in good repair. There is only minor surface cracking.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -874,7 +874,7 @@
     "pk": 744074,
     "fields": {
       "park": 744,
-      "facility": 74,
+      "facility": "74",
       "comments": "A picnic shelter is located at the group site. This shelter has a wood stove and a sink counter area. Some of the picnic tables have the extended table top.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -884,7 +884,7 @@
     "pk": 744081,
     "fields": {
       "park": 744,
-      "facility": 81,
+      "facility": "81",
       "comments": "The viewing area at this park consists of an accessible pathway down to the lakeside. The trail terminates in a clear space at the edge of a marsh from which the marsh section of Tyhee Lake can be observed. There is no platform, seating, or shelter provided.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -894,7 +894,7 @@
     "pk": 744082,
     "fields": {
       "park": 744,
-      "facility": 82,
+      "facility": "82",
       "comments": "This park has a boat launch consisting of a concrete launching area with a dock directly beside it. The drop-off edge between the two, as well as the drop-off edge at the approach to the dock, have handrails at a height of 930 mm. Signage at the boat launch area includes a bright yellow warning sign about the use of lifejackets, as well as a sign about how to interact with wildlife.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -904,7 +904,7 @@
     "pk": 744091,
     "fields": {
       "park": 744,
-      "facility": 91,
+      "facility": "91",
       "comments": "The trail surface varies but includes sections which are covered in grass and moss and may be slippery, some which have large roots, and some with significant cross slope.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -914,7 +914,7 @@
     "pk": 744092,
     "fields": {
       "park": 744,
-      "facility": 92,
+      "facility": "92",
       "comments": "Although much of the trail is level there are some sections with slope far in excess of 1 to 12.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -924,7 +924,7 @@
     "pk": 744093,
     "fields": {
       "park": 744,
-      "facility": 93,
+      "facility": "93",
       "comments": "The trail conditions very along its length but most of it is between 50 cm and 2 m wide.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -934,7 +934,7 @@
     "pk": 744095,
     "fields": {
       "park": 744,
-      "facility": 95,
+      "facility": "95",
       "comments": "Although much of the trail has height clearance of more than 2 m, there are significant sections where there are overhanging obstruction such as tree branches.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -944,7 +944,7 @@
     "pk": 744096,
     "fields": {
       "park": 744,
-      "facility": 96,
+      "facility": "96",
       "comments": "The only signage related to the trail is the name sign where it meets the campground adjacent to site number 20, and on the same post some information about plant life. The trail is also included on the park map, but there is no information provided regarding the trail accessibility details or length.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -954,7 +954,7 @@
     "pk": 744101,
     "fields": {
       "park": 744,
-      "facility": 101,
+      "facility": "101",
       "comments": "There is a concession stand called Snack Shack located at the beach day use area. It has a single counter with a height of 1.3 m. It is not connected to the accessible pathway, but can be approached across level firm grassy areas from the accessible pathway.",
       "created_at": "2019-11-28T20:14:29Z"
     }
@@ -964,7 +964,7 @@
     "pk": 744102,
     "fields": {
       "park": 744,
-      "facility": 102,
+      "facility": "102",
       "comments": "The playground in the day use area is surrounded by 4 x 4 timbers with a surface material of loose pea gravel. It is accessed from the grass areas with a threshold height of two 4 x 4 posts, or via an accessible pathway with a threshold height of one 4 x 4 post. There are no specific accessible play features in the children&rsquo;s playground. There is also a volleyball net set up adjacent to the accessible walkway to the beach from the parking lot. There is no accessible pathway from this walkway to the volleyball play area.",
       "created_at": "2019-11-28T20:14:29Z"
     }

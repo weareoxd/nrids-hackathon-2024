@@ -5,13 +5,7 @@ from .models import Facility, Feedback, Park, Photo
 
 @admin.register(Park)
 class ParkAdmin(admin.ModelAdmin):
-    list_display = (
-        "name",
-        "url",
-        "latitude",
-        "longitude",
-        "image",
-    )
+    list_display = ("name",)
     ordering = ("name",)
     search_fields = ["name"]
 
