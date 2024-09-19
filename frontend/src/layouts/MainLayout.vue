@@ -21,13 +21,6 @@
             label="Share your experience"
           />
         </div>
-
-        <nav class="q-pa-sm">
-          <!-- Temporary(?) nav shortcuts to pages -->
-          <router-link v-for="link in navLinks" :key="link.label" :to="link.to">
-            {{ link.label }}
-          </router-link>
-        </nav>
       </header>
     </q-header>
 
