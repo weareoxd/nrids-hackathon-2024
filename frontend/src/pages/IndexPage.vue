@@ -11,7 +11,7 @@
 
 <script setup>
 import ParkCard from "src/components/ParkCard.vue";
-import { useParksList } from "src/data/useParksList";
+import useParksList from "src/data/useParksList";
 
 const { parksList } = useParksList();
 

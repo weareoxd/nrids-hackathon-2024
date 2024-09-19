@@ -3,7 +3,7 @@ import slugify from "slugify";
 import { api } from "src/boot/axios";
 import { ref } from "vue";
 
-export function useParksList() {
+export default function useParksList() {
   const parksList = ref([]);
   const isLoading = ref(false);
   const error = ref(null);

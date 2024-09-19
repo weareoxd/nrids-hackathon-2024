@@ -36,7 +36,7 @@
 <script setup>
 import { computed, onBeforeMount, ref } from "vue";
 import Chatbot from "src/components/ChatbotModal.vue";
-import { useParksList } from "src/data/useParksList";
+import useParksList from "src/data/useParksList";
 
 const { parksList } = useParksList();
 

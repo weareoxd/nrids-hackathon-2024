@@ -43,11 +43,7 @@
         label="Facility"
         emit-value
         map-options
-        :options="[
-          // @TODO: get facilities list or change to plain text input?
-          { label: 'Parking lot', value: 'Parking lot' },
-          { label: 'Campgrounds', value: 'Campgrounds' },
-        ]"
+        :options="facilityOptions"
         :rules="[(val) => !!val || 'Please select a park facility']"
       />
 
@@ -80,7 +76,8 @@
 <script setup>
 import { computed, ref } from "vue";
 import { api } from "src/boot/axios";
-import { useParksList } from "src/data/useParksList";
+import useParksList from "src/data/useParksList";
+import useFacilitiesList from "src/data/useFacilitiesList";
 
 defineOptions({
   name: "AddCommentForm",
@@ -98,6 +95,13 @@ const parkOptions = computed(() =>
     value: park.id,
   }))
 );
+
+const { facilities } = useFacilitiesList();
+const facilityOptions = facilities.map((facility) => ({
+  // Use the facility name as the label and value
+  label: facility.feature_name,
+  value: facility.feature_name,
+}));
 
 const emit = defineEmits(["cancel"]);
 

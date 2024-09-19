@@ -9,7 +9,7 @@
 
 <script setup>
 import ParkDetails from "components/ParkDetails.vue";
-import { useParksList } from "src/data/useParksList";
+import useParksList from "src/data/useParksList";
 import { computed, ref, watchEffect } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
