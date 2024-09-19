@@ -85,6 +85,12 @@ module.exports = configure(function (/* ctx */) {
       // https: true
       open: true, // opens browser window automatically
       port: 5173,
+
+      // API proxy for dev server: let root-relative image URLs work in dev
+      proxy: {
+        // /media/... -> http://localhost:8000/media/...
+        "/media": "http://localhost:8000/",
+      },
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
