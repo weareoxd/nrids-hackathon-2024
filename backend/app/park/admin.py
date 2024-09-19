@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.db.models import JSONField
 from django_json_widget.widgets import JSONEditorWidget
 
-from .models import Facility, Feedback, Park, Photo
+from .models import Facility, Feature, Feedback, Park, Photo
 
 
 @admin.register(Park)
@@ -42,3 +42,12 @@ class PhotoAdmin(admin.ModelAdmin):
         "url",
     )
     ordering = ("feedback",)
+
+
+@admin.register(Feature)
+class FeatureAdmin(admin.ModelAdmin):
+    list_display = (
+        "name",
+        "description",
+    )
+    ordering = ("name",)

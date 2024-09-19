@@ -16,7 +16,13 @@ class Command(BaseCommand):
         os.makedirs(output_dir, exist_ok=True)
 
         # Define the models to dump
-        models = ["park.Park", "park.Facility", "park.Feedback", "park.Photo"]
+        models = [
+            "park.Park",
+            "park.Facility",
+            "park.Feedback",
+            "park.Photo",
+            "park.Feature",
+        ]
 
         # Dump data for each model
         for model in models:

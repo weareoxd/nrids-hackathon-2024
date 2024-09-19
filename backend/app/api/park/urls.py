@@ -9,5 +9,5 @@ router.register("feedback", FeedbackViewSet, basename="feedback")
 
 urlpatterns = [
     path("", include(router.urls)),
-    path("search/", SearchView.as_view(), name="banner"),
+    path("search/", SearchView.as_view(), name="search"),
 ]
