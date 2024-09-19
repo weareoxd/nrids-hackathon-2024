@@ -78,6 +78,9 @@ import { computed, ref } from "vue";
 import { api } from "src/boot/axios";
 import useParksList from "src/data/useParksList";
 import useFacilitiesList from "src/data/useFacilitiesList";
+import { useQuasar } from "quasar";
+
+const $q = useQuasar();
 
 defineOptions({
   name: "AddCommentForm",
@@ -120,9 +123,25 @@ async function onSubmit(submitEvent) {
 
   const formData = new FormData(submitEvent.target);
 
-  const response = await api.post("/park/feedback/", formData);
+  try {
+    const response = await api.post("/park/feedback/", formData);
+    console.log("response", response);
 
-  console.log("response", response);
+    // close the modal
+    emit("cancel");
+
+    $q.notify({
+      type: "positive",
+      message: "Thank you! Your feedback has been submitted.",
+    });
+  } catch (error) {
+    console.error("error", error);
+    $q.notify({
+      type: "negative",
+      message:
+        "There was a problem submitting your feedback. Please try again.",
+    });
+  }
 }
 </script>
 
