@@ -148,7 +148,7 @@ const filePreviews = ref([]);
 const parkId = ref(park ? park.id : null);
 const facility = ref(null);
 const comments = ref("");
-const isSubmitting = ref(true);
+const isSubmitting = ref(false);
 
 function onFileRejected(files) {
   console.log("Rejected files", files);
