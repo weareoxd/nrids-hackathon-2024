@@ -18,10 +18,10 @@ class Command(BaseCommand):
         # Define the models to dump
         models = [
             "park.Park",
+            "park.Feature",
             "park.Facility",
             "park.Feedback",
             "park.Photo",
-            "park.Feature",
         ]
 
         # Dump data for each model
