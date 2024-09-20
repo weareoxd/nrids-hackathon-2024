@@ -1,0 +1,25 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "yarn install",
+      "type": "shell",
+      "command": "yarn install",
+      "isBackground": true
+    },
+    {
+      "label": "yarn run dev",
+      "type": "shell",
+      "command": "yarn run dev",
+      "isBackground": true,
+      "dependsOrder": "sequence",
+      "dependsOn": ["yarn install"],
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
