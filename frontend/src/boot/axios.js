@@ -9,7 +9,7 @@ import axios from "axios";
 // for each client)
 const api = axios.create({
   baseURL:
-    process.env.API_BASE_URL || "https://nrids-hackathon-2024.dev.oxd.com/api",
+    process.env.API_BASE_URL || "https://nrids-hackathon-2024.dev.oxd.com/api"
 });
 
 export default boot(({ app }) => {

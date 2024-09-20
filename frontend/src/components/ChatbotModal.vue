@@ -30,8 +30,8 @@ import { ref } from "vue";
 export default {
   setup() {
     return {
-      fullHeight: ref(false),
+      fullHeight: ref(false)
     };
-  },
+  }
 };
 </script>

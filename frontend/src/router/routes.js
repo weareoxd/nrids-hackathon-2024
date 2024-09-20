@@ -6,16 +6,16 @@ const routes = [
       {
         name: "home",
         path: "",
-        component: () => import("pages/IndexPage.vue"),
+        component: () => import("pages/IndexPage.vue")
       },
 
       // wildcard route for park details
       {
         name: "park-details",
         path: "/details/:slug",
-        component: () => import("pages/ParkDetailsPage.vue"),
-      },
-    ],
+        component: () => import("pages/ParkDetailsPage.vue")
+      }
+    ]
   },
 
   // Always leave this as last one,
@@ -23,8 +23,8 @@ const routes = [
   {
     name: "not-found",
     path: "/:catchAll(.*)*",
-    component: () => import("pages/ErrorNotFound.vue"),
-  },
+    component: () => import("pages/ErrorNotFound.vue")
+  }
 ];
 
 export default routes;

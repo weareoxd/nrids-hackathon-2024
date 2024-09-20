@@ -2,7 +2,7 @@
   <q-page class="">
     <div class="squatchy-wrap">
       <div class="squatchy">
-        <q-avatar><img src="~assets/squatchy.svg" /></q-avatar>
+        <q-avatar><img src="~assets/squatchy.svg"/></q-avatar>
 
         <p class="q-ma-none">
           {{ squatchyText }}
@@ -48,7 +48,7 @@ import useParksList from "src/data/useParksList";
 import { computed, ref } from "vue";
 
 defineOptions({
-  name: "IndexPage",
+  name: "IndexPage"
 });
 
 const { parksList, addSlugs } = useParksList();
@@ -86,8 +86,8 @@ async function squatchySearch() {
   // query for squatchyQuery
   const response = await api.get("/park/search/", {
     params: {
-      q: squatchyQuery.value,
-    },
+      q: squatchyQuery.value
+    }
   });
 
   searchResults.value = addSlugs(response.data);

@@ -46,7 +46,7 @@ import AddCommentForm from "components/AddCommentForm.vue";
 const showAddCommentForm = ref(false);
 
 defineOptions({
-  name: "MainLayout",
+  name: "MainLayout"
 });
 </script>
 

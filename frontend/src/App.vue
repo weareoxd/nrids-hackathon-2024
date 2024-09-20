@@ -9,6 +9,6 @@ import useParksList from "./data/useParksList";
 const { parksList } = useParksList();
 
 defineOptions({
-  name: "App",
+  name: "App"
 });
 </script>

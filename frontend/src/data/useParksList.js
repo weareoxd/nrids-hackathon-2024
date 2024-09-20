@@ -33,17 +33,17 @@ export default function useParksList() {
   fetchParks();
 
   function getParkBySlug(slug) {
-    return parksList.value.find((park) => park.slug === slug);
+    return parksList.value.find(park => park.slug === slug);
   }
 
   function addSlugs(parks) {
     const parksArray = toValue(parks);
-    return parksArray.map((park) => {
+    return parksArray.map(park => {
       const slug = slugify(park.name, { lower: true });
 
       return {
         ...park,
-        slug,
+        slug
       };
     });
   }

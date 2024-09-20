@@ -12,7 +12,7 @@ const { configure } = require("quasar/wrappers");
 // parse any .env file
 require("@dotenvx/dotenvx").config();
 
-module.exports = configure(function (/* ctx */) {
+module.exports = configure(function(/* ctx */) {
   return {
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
     // preFetch: true,
@@ -36,14 +36,14 @@ module.exports = configure(function (/* ctx */) {
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
       "roboto-font", // optional, you are not bound to it
-      "material-icons", // optional, you are not bound to it
+      "material-icons" // optional, you are not bound to it
     ],
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#build
     build: {
       target: {
         browser: ["es2019", "edge88", "firefox78", "chrome87", "safari13.1"],
-        node: "node20",
+        node: "node20"
       },
 
       vueRouterMode: "hash", // available values: 'hash', 'history'
@@ -56,7 +56,7 @@ module.exports = configure(function (/* ctx */) {
       // publicPath: '/',
       // analyze: true,
       env: {
-        API_BASE_URL: process.env.API_BASE_URL,
+        API_BASE_URL: process.env.API_BASE_URL
       },
       // rawDefine: {}
       // ignorePublicFolder: true,
@@ -72,12 +72,12 @@ module.exports = configure(function (/* ctx */) {
           "vite-plugin-checker",
           {
             eslint: {
-              lintCommand: 'eslint "./**/*.{js,mjs,cjs,vue}"',
-            },
+              lintCommand: 'eslint "./**/*.{js,mjs,cjs,vue}"'
+            }
           },
-          { server: false },
-        ],
-      ],
+          { server: false }
+        ]
+      ]
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
@@ -89,15 +89,15 @@ module.exports = configure(function (/* ctx */) {
       // API proxy for dev server: let root-relative image URLs work in dev
       proxy: {
         // /media/... -> http://localhost:8000/media/...
-        "/media": "http://localhost:8000/",
-      },
+        "/media": "http://localhost:8000/"
+      }
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
     framework: {
       config: {
         // disable ripple animation
-        ripple: false,
+        ripple: false
       },
 
       // iconSet: 'material-icons', // Quasar icon set
@@ -111,7 +111,7 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ["Notify"],
+      plugins: ["Notify"]
     },
 
     // animations: 'all', // --- includes all animations
@@ -147,8 +147,8 @@ module.exports = configure(function (/* ctx */) {
       // (gets superseded if process.env.PORT is specified at runtime)
 
       middlewares: [
-        "render", // keep this as last one
-      ],
+        "render" // keep this as last one
+      ]
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/developing-pwa/configuring-pwa
@@ -157,7 +157,7 @@ module.exports = configure(function (/* ctx */) {
       injectPwaMetaTags: true,
       swFilename: "sw.js",
       manifestFilename: "manifest.json",
-      useCredentialsForManifestTag: false,
+      useCredentialsForManifestTag: false
       // useFilenameHashes: true,
       // extendGenerateSWOptions (cfg) {}
       // extendInjectManifestOptions (cfg) {},
@@ -172,7 +172,7 @@ module.exports = configure(function (/* ctx */) {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/developing-capacitor-apps/configuring-capacitor
     capacitor: {
-      hideSplashscreen: true,
+      hideSplashscreen: true
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/developing-electron-apps/configuring-electron
@@ -199,16 +199,16 @@ module.exports = configure(function (/* ctx */) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: "frontend",
-      },
+        appId: "frontend"
+      }
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/developing-browser-extensions/configuring-bex
     bex: {
-      contentScripts: ["my-content-script"],
+      contentScripts: ["my-content-script"]
 
       // extendBexScriptsConf (esbuildConf) {}
       // extendBexManifestJson (json) {}
-    },
+    }
   };
 });

@@ -42,12 +42,12 @@ watchEffect(() => {
     // redirect to error page
     router.push({
       name: "not-found",
-      params: { catchAll: "park-not-found" },
+      params: { catchAll: "park-not-found" }
     });
   }
 });
 
 defineOptions({
-  name: "ParkDetailsPage",
+  name: "ParkDetailsPage"
 });
 </script>
