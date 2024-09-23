@@ -2,6 +2,11 @@ name: Build and deploy to AWS ECS
 
 on:
   workflow_dispatch:
+    inputs:
+      commit_message:
+        description: 'Message for manual workflow run'
+        default: 'Manual workflow run'
+        required: false
   push:
     branches:
       - main
@@ -19,49 +24,34 @@ jobs:
       cancel-in-progress: true
 
     steps:
+      - name: Define workflow variables
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            commit_message=$(echo "${{ github.event.inputs.commit_message }}" | jq -sRr @json | tr -d '\n')
+            commit_author=$(printf "%s"  "${{ github.actor }}" | jq -sRr @json)
+          else
+            commit_message=$(echo "${{ github.event.head_commit.message }}" | jq -sRr @json | tr -d '\n')
+            commit_author=$(printf "%s"  "${{ github.event.head_commit.author.name  }}" | jq -sRr @json)
+          fi
+          echo "COMMIT_MESSAGE=$commit_message" >> $GITHUB_ENV
+          echo "COMMIT_AUTHOR=$commit_author" >> $GITHUB_ENV
+
+          attachments='[{"color": "", "fields": [{"title": "Status", "value": "", "short": false}, {"title": "Repository", "value": "${{ github.repository }}", "short": true}, {"title": "Branch", "value": "${{ github.ref }}", "short": true}, {"title": "Commit Author", "value": '$commit_author', "short": true}, {"title": "Commit SHA", "value": "${{ github.sha }}", "short": true}, {"title": "Commit Message", "value": '$commit_message', "short": false} ]}]'
+          echo "SLACK_MESSAGE_TEMPLATE=$attachments" >> $GITHUB_ENV
+
       - name: Send Slack notification (before build)
         run: |
-          response=$(curl -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data '{
+          timestamp=$(TZ=America/Vancouver date +"%-l:%M%p PT")
+          slack_message=$(jq --arg timestamp "$timestamp" '.[0].fields[0].value = "Build started at \($timestamp)" | .[0].color = "warning"' <<< "$SLACK_MESSAGE_TEMPLATE")
+
+          response=$(curl https://slack.com/api/chat.postMessage -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data @- <<EOF
+          {
             "channel": "${{ vars.SLACK_CHANNEL_ID }}",
-            "attachments": [
-              {
-                "color": "warning",
-                "fields": [
-                  {
-                    "title": "Status",
-                    "value": "Build started",
-                    "short": false
-                  },
-                  {
-                    "title": "Repository",
-                    "value": "${{ github.repository }}",
-                    "short": true
-                  },
-                  {
-                    "title": "Branch",
-                    "value": "${{ github.ref }}",
-                    "short": true
-                  },
-                  {
-                    "title": "Commit Message",
-                    "value": "${{ github.event.head_commit.message }}",
-                    "short": false
-                  },
-                  {
-                    "title": "Commit Author",
-                    "value": "${{ github.event.head_commit.author.name }}",
-                    "short": true
-                  },
-                  {
-                    "title": "Commit SHA",
-                    "value": "${{ github.sha }}",
-                    "short": true
-                  }
-                ]
-              }
-            ]
-          }' https://slack.com/api/chat.postMessage)
-          echo "response=$response" >> $GITHUB_ENV
+            "attachments": $slack_message
+          }
+          EOF
+          )
+
           echo "SLACK_TS=$(echo $response | jq -r '.ts')" >> $GITHUB_ENV
 
       - name: Checkout code
@@ -104,54 +94,24 @@ jobs:
         with:
           platforms: linux/arm64
           push: true
-          tags: '${{ vars.AWS_ECR_REPOSITORY }}:latest'
+          tags: "${{ vars.AWS_ECR_REPOSITORY }}:latest"
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
 
       - name: Update Slack message (deployment started)
         if: always()
         run: |
-          curl -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data '{
-            "ts": "${{ env.SLACK_TS }}",
-            "channel": "${{ vars.SLACK_CHANNEL_ID }}",
-            "attachments": [
-              {
-                "color": "warning",
-                "fields": [
-                  {
-                    "title": "Status",
-                    "value": "Deployment started",
-                    "short": false
-                  },
-                  {
-                    "title": "Repository",
-                    "value": "${{ github.repository }}",
-                    "short": true
-                  },
-                  {
-                    "title": "Branch",
-                    "value": "${{ github.ref }}",
-                    "short": true
-                  },
-                  {
-                    "title": "Commit Message",
-                    "value": "${{ github.event.head_commit.message }}",
-                    "short": false
-                  },
-                  {
-                    "title": "Commit Author",
-                    "value": "${{ github.event.head_commit.author.name }}",
-                    "short": true
-                  },
-                  {
-                    "title": "Commit SHA",
-                    "value": "${{ github.sha }}",
-                    "short": true
-                  }
-                ]
-              }
-            ]
-          }' https://slack.com/api/chat.update
+          timestamp=$(TZ=America/Vancouver date +"%-l:%M%p PT")
+          slack_message=$(jq --arg timestamp "$timestamp" '.[0].fields[0].value = "Build finished, deployment started at \($timestamp)" | .[0].color = "warning"' <<< "$SLACK_MESSAGE_TEMPLATE")
+
+          response=$(curl https://slack.com/api/chat.update -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data @- <<EOF
+          {
+              "ts": "${{ env.SLACK_TS }}",
+              "channel": "${{ vars.SLACK_CHANNEL_ID }}",
+              "attachments": $slack_message
+          }
+          EOF
+          )
 
       - name: Start deployment
         run: |
@@ -169,99 +129,62 @@ jobs:
             --services ${{ vars.AWS_ECS_SERVICE }} \
             --region ${{ env.AWS_REGION }}
 
-      - name: Update Slack message (finish)
+      - name: Update Slack message (completed)
         if: success()
         run: |
-          curl -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data '{
-            "ts": "${{ env.SLACK_TS }}",
-            "channel": "${{ vars.SLACK_CHANNEL_ID }}",
-            "attachments": [
-              {
-                "color": "good",
-                "fields": [
-                  {
-                    "title": "Status",
-                    "value": "Deployment complete",
-                    "short": false
-                  },
-                  {
-                    "title": "Repository",
-                    "value": "${{ github.repository }}",
-                    "short": true
-                  },
-                  {
-                    "title": "Branch",
-                    "value": "${{ github.ref }}",
-                    "short": true
-                  },
-                  {
-                    "title": "Commit Message",
-                    "value": "${{ github.event.head_commit.message }}",
-                    "short": false
-                  },
-                  {
-                    "title": "Commit Author",
-                    "value": "${{ github.event.head_commit.author.name }}",
-                    "short": true
-                  },
-                  {
-                    "title": "Commit SHA",
-                    "value": "${{ github.sha }}",
-                    "short": true
-                  }
-                ],
-                "actions": [
-                  {
-                    "type": "button",
-                    "text": "View application",
-                    "url": "${{ vars.APP_URL }}"
-                  }
-                ]
-              }
-            ]
-          }' https://slack.com/api/chat.update
+          timestamp=$(TZ=America/Vancouver date +"%-l:%M%p PT")
+          slack_message=$(jq --arg timestamp "$timestamp" '.[0].fields[0].value = "Deployment completed at \($timestamp)" | .[0].color = "good"' <<< "$SLACK_MESSAGE_TEMPLATE")
 
-      - name: Update Slack message (failure)
+          response=$(curl https://slack.com/api/chat.update -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data @- <<EOF
+          {
+              "ts": "${{ env.SLACK_TS }}",
+              "channel": "${{ vars.SLACK_CHANNEL_ID }}",
+              "attachments": $slack_message,
+              "actions": [
+                  {
+                      "type": "button",
+                      "text": "View application",
+                      "url": "${{ vars.APP_URL }}"
+                  }
+              ]
+          }
+          EOF
+          )
+
+      - name: Update Slack message (failed)
         if: failure()
         run: |
-          curl -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data '{
-            "ts": "${{ env.SLACK_TS }}",
-            "channel": "${{ vars.SLACK_CHANNEL_ID }}",
-            "attachments": [
-              {
-                "color": "danger",
-                "fields": [
+          timestamp=$(TZ=America/Vancouver date +"%-l:%M%p PT")
+          slack_message=$(jq --arg timestamp "$timestamp" '.[0].fields[0].value = "Build and/or deployment failed at \($timestamp)" | .[0].color = "danger"' <<< "$SLACK_MESSAGE_TEMPLATE")
+
+          response=$(curl https://slack.com/api/chat.update -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data @- <<EOF
+          {
+              "ts": "${{ env.SLACK_TS }}",
+              "channel": "${{ vars.SLACK_CHANNEL_ID }}",
+              "attachments": $slack_message,
+              "actions": [
                   {
-                    "title": "Status",
-                    "value": "Build and/or deployment failed",
-                    "short": false
-                  },
-                  {
-                    "title": "Repository",
-                    "value": "${{ github.repository }}",
-                    "short": true
-                  },
-                  {
-                    "title": "Branch",
-                    "value": "${{ github.ref }}",
-                    "short": true
-                  },
-                  {
-                    "title": "Commit Message",
-                    "value": "${{ github.event.head_commit.message }}",
-                    "short": false
-                  },
-                  {
-                    "title": "Commit Author",
-                    "value": "${{ github.event.head_commit.author.name }}",
-                    "short": true
-                  },
-                  {
-                    "title": "Commit SHA",
-                    "value": "${{ github.sha }}",
-                    "short": true
+                      "type": "button",
+                      "text": "View details",
+                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                   }
-                ],
-              }
-            ]
-          }' https://slack.com/api/chat.update
+              ]
+          }
+          EOF
+          )
+
+
+      - name: Update Slack message (cancelled)
+        if: cancelled()
+        run: |
+          timestamp=$(TZ=America/Vancouver date +"%-l:%M%p PT")
+          slack_message=$(jq --arg timestamp "$timestamp" '.[0].fields[0].value = "Build and/or deployment cancelled at \($timestamp)" | .[0].color = "danger"' <<< "$SLACK_MESSAGE_TEMPLATE")
+
+          response=$(curl https://slack.com/api/chat.update -X POST -H 'Content-type: application/json; charset=utf-8' -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" --data @- <<EOF
+          {
+              "ts": "${{ env.SLACK_TS }}",
+              "channel": "${{ vars.SLACK_CHANNEL_ID }}",
+              "attachments": $slack_message
+          }
+          EOF
+          )
