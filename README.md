@@ -5,9 +5,19 @@
   - [Frontend development](#frontend)
   - [Backend development](#backend)
 - [Deployment process](#servers-deployment)
+- [License](#license)
 ---
 
-The application is composed of a containerized [Django](https://www.djangoproject.com/) backend with a PostgreSQL database, and a frontend application built using [Vue.js](https://vuejs.org/). This project setup is optimized for [Visual Studio Code](https://code.visualstudio.com/).
+This application is designed to enhance park accessibility using AI and crowdsourcing. Developed during the "Cryptid Coders in the Wilderness of BC" Hackathon by the BC Ministry of Water, Land, and Resource Stewardship (WLRS), the challenge was to provide accurate, up-to-date information about accessible facilities in BC Parks.
+
+Our solution leverages AI-powered semantic search and crowdsourced data to create a dynamic, personalized resource for park visitors with diverse accessibility needs. Key features include user-friendly accessibility review submission, AI-powered tagging for accessibility features, and semantic search to match user queries with relevant park features. 
+
+The technology stack includes:
+- [OpenAI](https://openai.com/) API for natural language processing (NLP)
+- [Django](https://www.djangoproject.com/) + Django REST Framework + PostgreSQL for database management
+- [Vue.js](https://vuejs.org/) + Quasar for frontend development
+- [Docker](https://www.docker.com/) for local development containerization
+- [GitHub](https://github.com/) with a CI/CD pipeline for automatic deployment to AWS
 
 ## <a name="prerequisites"></a>Prerequisites
 
@@ -53,3 +63,7 @@ See the [Backend README](backend/README.md) for details on setting up and buildi
 ## <a name="servers-deployment"></a>Deployment process
 
 When code is merged to the `main` branch, webhooks in GitLab will trigger a build of the frontend and backend into a Docker image, tag the image, and deploy the image to [https://nrids-hackathon-2024.dev.oxd.com/](https://nrids-hackathon-2024.dev.oxd.com/). Notifications for the build and deployment status will be sent to the `#hackathon-dds` Slack channel.
+
+## <a name="license"></a>License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
