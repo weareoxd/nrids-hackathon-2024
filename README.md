@@ -5,6 +5,7 @@
   - [Frontend development](#frontend)
   - [Backend development](#backend)
 - [Deployment process](#servers-deployment)
+- [Links](#links)
 - [License](#license)
 ---
 
@@ -63,6 +64,11 @@ See the [Backend README](backend/README.md) for details on setting up and buildi
 ## <a name="servers-deployment"></a>Deployment process
 
 When code is merged to the `main` branch, webhooks in GitLab will trigger a build of the frontend and backend into a Docker image, tag the image, and deploy the image to [https://nrids-hackathon-2024.dev.oxd.com/](https://nrids-hackathon-2024.dev.oxd.com/). Notifications for the build and deployment status will be sent to the `#hackathon-dds` Slack channel.
+
+## <a name="links"></a>Links
+
+- [Presentation deck](/docs/presentation.pdf)
+- [OXD blog post - "Enhancing park accessibility with AI and crowdsourcing: How a Hackathon inspired real-world solutions"](https://oxd.com/blog/2024/09/20/enhancing-park-accessibility-with-ai-and-crowdsourcing-a-two-day-hackathon/)
 
 ## <a name="license"></a>License
 
