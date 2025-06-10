@@ -3,6 +3,8 @@
 - [Getting started](#gettingstarted)
 - [Post setup](#postsetup)
   - [Starting Django](#postsetup-starting-django)
+  - [Create Django Superuser](#postsetup-create-superuser)
+  - [Load Django Fixtures](#postsetup-load-fixtures)
   - [Make migrations](#postsetup-make-migrations)
   - [Apply migrations](#postsetup-apply-migrations)
   - [Managing dependencies using Poetry](#postsetup-dependencies)
@@ -66,6 +68,21 @@ Visual Studio Code will start the database and Django containers and start the d
 
 If the backend doesn't start on it's own
 - click in the top menu `terminal` > `Run Task...` > `backend server`
+
+### <a name="postsetup-create-superuser"></a>Create a superuser to access Django admin
+
+Open a new terminal window in VS Code and run the following command
+```
+python manage.py createsuperuser
+```
+You can log into Django admin from http://localhost:8000/admin
+
+### <a name="postsetup-load-fixtures"></a>Load the sample data
+
+Run this command in your terminal window to load the Django fixtures into the database
+```
+python manage.py import_fixtures
+```
 
 ### <a name="postsetup-make-migrations"></a>Make migrations
 
